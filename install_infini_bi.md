@@ -34,7 +34,7 @@
     # megawise ip
     MEGAWISE_HOST=l92.168.1.1
     # megawise 用户名
-    MEGAWISE_USER=zilliz_support
+    MEGAWISE_USER=zilliz
     # megawise 密码
     MEGAWISE_PWD=zilliz
     # megawise 数据库名称
@@ -50,7 +50,14 @@
    $ docker-compose -f docker-compose.yml up
    ```
 
-5. 打开任意浏览器，我们优先支持 Chrome 和 Firefox
+5. 修改 host, 打开 `/etc/hosts` 文件，添加以下一条。请把 `192.168.1.1` 改成当前运行 docker 的服务器的 ip 地址
+   ```shell
+    #/etc/hosts
+    192.168.1.1 infini
+   ```
+   > 注意: 修改hosts文件 需要 sudo 权限.
+
+6. 打开任意浏览器，我们优先支持 Chrome 和 Firefox
 
    ```shell
    # 输入inifi安装的机器的ip或者host地址，默认是80端口
@@ -69,7 +76,7 @@
   ![dashboard-list](./assets/dashboard-list.png)
   ![New York Taxi data](./assets/nyc-demo.png)
 
-6. 关闭 Infini 可视化组件
+7. 关闭 Infini 可视化组件
   ```shell
    # Stop Infini
    $ docker-compose -f docker-compose.yml down

@@ -146,6 +146,8 @@ $ docker run --gpus all --shm-size 17179869184 -v /home/zilliz/megawise/conf:/me
 Megawise server is running...
 ```
 
+注意: 请确保本机的防火墙5433端口被打开
+
 ### 1.4.2 查看容器
 - 运行以下命令查看 docker 容器的运行情况
 
@@ -280,11 +282,12 @@ $ docker stop <CONTAINER ID>
   host    replication     all             127.0.0.1/32            trust
   host    replication     all             ::1/128                 trust
   ```
-在文件的末尾加上如下一行（ 192.168.1.65 为宿主机的 IP ），这样设置是可以从本机通过 psql 直接访问容器中的 MegaWise ，而且不用输入密码；如果你需要从其他的机器访问这个容器中的 MegaWise ，可以修改这里的 IP 设置
+在文件的末尾加上如下一行（0.0.0.0/0）。这样设置后，可以在本机通过 psql 直接访问容器中的 MegaWise ，而且不用输入密码。如果您需要从其他的机器访问这个容器中的 MegaWise ，请修改这里的 IP 设置。
 
   ```
-  host    all             all             192.168.1.65/32         trust
+  host    all             all             0.0.0.0/0         trust
   ```
+
 ### 1.5.2 启动 MegaWise
 - 再次启动容器
 
@@ -300,13 +303,18 @@ $ docker restart <CONTAINER ID>
 $ psql --username=megawise -h 192.168.1.65 -p 5433 -d postgres
 ```
 
-
-
 ## 1.6 导入测试数据
 
 导入一部分测试数据，以方便之后验证 Infini 图形渲染引擎和前端可视化组件的安装。测试数据抽取自 Uber 开放的纽约出租车订单数据，记录数 100,000 条。
 
-### 1.6.1 创建一个新表
+### 1.6.1 新建一个用户
+通过以下命令，为 Infini 可视化组件创建一个用户：
+
+```sql
+postgres=# CREATE USER zilliz WITH passward 'zilliz';
+```
+
+### 1.6.2 创建一个新表
 
 ```sql
 postgres=# drop table if exists nyc_taxi;
@@ -327,16 +335,15 @@ postgres=# create table nyc_taxi(
     );
 ```
 
-### 1.6.2 获取测试数据
+### 1.6.3 获取测试数据
 
 ```bash
 $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/sample_data/nyc_taxi_data.csv
 $ docker cp nyc_taxi_data.csv <CONTAINER ID>:/megawise/
 ```
 
-### 1.6.3 向表中插入测试数据
+### 1.6.4 向表中插入测试数据
 
 ```sql
 postgres=# copy nyc_taxi from '/megawise/nyc_taxi_data.csv WITH DELIMITER ',' csv header;
 ```
-
