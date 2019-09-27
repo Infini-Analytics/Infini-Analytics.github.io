@@ -5,10 +5,9 @@
 
 - 本文中所涉及的系统，仅限于 Ubuntu 16.04 及以上的版本
 - 本文假定你已经在宿主机上安装 nvidia 的驱动，驱动版本为 430 （使用 `nvidia-smi` 命令检查）
-- 本文假定你已经在宿主机安装 cuda 工具包，cuda 版本为 9.0 （使用 `cat /usr/local/cuda/version.txt` 命令检查)
 - 本文假定你已经在宿主机安装 docker 管理工具，版本为 19.03 （使用 `docker -v` 命令检查）
 
-
+> 注：MegaWise 镜像中已经包含 cuda 9.0 ，因此用户无需额外安装。
 
 ## 1.2 获取 MegaWise 镜像和配置 docker 环境
 
