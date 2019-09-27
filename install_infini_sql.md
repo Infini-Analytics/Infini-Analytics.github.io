@@ -3,26 +3,27 @@
 
 ## 1.1 环境准备  
 
-- 本文中所涉及的系统，仅限于 Ubuntu 16.04 及以上的版本
-- 本文假定你已经在宿主机上安装 nvidia 的驱动，驱动版本为 430 （使用 `nvidia-smi` 命令检查）
-- 本文假定你已经在宿主机安装 cuda 工具包，cuda 版本为 9.0 （使用 `cat /usr/local/cuda/version.txt` 命令检查)
-- 本文假定你已经在宿主机安装 docker 管理工具，版本为 19.03 （使用 `docker -v` 命令检查）
+- 本文中所涉及的系统，仅限于 Ubuntu 16.04 及以上的版本。
+- 请在宿主机上安装 NVIDIA driver 430。如已安装，请使用 `nvidia-smi` 命令检查。
+- 请在宿主机上安装 CUDA 9.0。如已安装，请使用 `cat /usr/local/cuda/version.txt` 命令检查。
+- 请在宿主机上安装 Docker 19.03。如已安装，请使用 `docker -v` 命令检查。
 
 
 
-## 1.2 获取 MegaWise 镜像和配置 docker 环境
+## 1.2 获取 MegaWise 镜像和配置 Docker 环境
 
-### 1.2.1 获取 MegaWise 的镜像
+### 1.2.1 获取 MegaWise 镜像
 
 ```bash
 $ docker pull zilliz/megawise:0.3.0-d091919-1679
 ```
 
-### 1.2.2 配置 docker 环境
+### 1.2.2 配置 Docker 环境
 
-配置 docker 环境仅需要**执行一次**，根据使用的操作系统不同，参考 https://github.com/NVIDIA/nvidia-docker ，下面介绍 Ubuntu 下如何操作：
+配置 Docker 环境仅需要**执行一次**。根据您使用的操作系统，具体配置可能有差异，详情请参考 https://github.com/NVIDIA/nvidia-docker 。
+下列操作基于 Ubuntu 系统：
 
-- 在终端逐条执行以下语句，**需要有 sudo 权限**  
+在终端逐条执行以下语句，**需要有 sudo 权限**  
 
 ```bash
 $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)   
@@ -32,13 +33,13 @@ $ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.
 $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit  
 $ sudo systemctl restart docker   
 ```
-- 检查是否安装成功
+检查是否安装成功
 
 ```bash
 # Test nvidia-smi with the latest official CUDA image  
 $ docker run --gpus all nvidia/cuda:9.0-base nvidia-smi  
 ```
-  如果终端中能正确显示显卡相关信息，说明宿主机环境已经准备好了  
+如果终端中能正确显示显卡相关信息，说明宿主机环境已经准备好了。
 
 
 
@@ -46,7 +47,7 @@ $ docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
 
 ### 1.3.1 MegaWise 目录设置 
 
-- 我们将创建空白目录 `megawise` ，此目录方便 docker 镜像映射文件，路径为 `/home/zilliz/megawise` ：
+我们将创建空白目录 `megawise` ，此目录方便 Docker 镜像映射文件，路径为 `/home/zilliz/megawise` ：
 
 ```bash
 $ mkdir megawise
@@ -54,7 +55,7 @@ $ cd megawise
 $ mkdir conf
 ```
 
-+ 进入当前 `megawise` 目录下的 `conf` 目录，获取 megawise 的 6 个配置文件
+进入当前 `megawise` 目录下的 `conf` 目录，获取 Megawise 的 6 个配置文件
 ```bash
 $ cd conf
 $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/chewie_main.yaml
@@ -65,9 +66,9 @@ $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/d
 $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/scheduler_config_template.yaml
 ```
 
-### 1.3.2 修改 MegaWise 的启动参数
+### 1.3.2 编辑 MegaWise 的启动参数
 
-- 打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件，找到如下片段
+打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件，找到如下片段
 
 ```
 cache:  # size in GB
@@ -84,9 +85,9 @@ cache:  # size in GB
 
 `cpu` 部分里 `physical_memory` 和 `partition_memory` 不要设置为超过宿主机当前可用的内存；
 
-`gpu_num` 请不要设置为超过宿主机实际的显卡数量， `physical_memory` 等也不能超过你当前可用的显存  。
+`gpu_num` 请不要设置为超过宿主机实际的显卡数量， `physical_memory` 等也不能超过你当前可用的显存。
 
-- 打开 `conf` 目录下面的 `megawise_config.yaml` 配置文件，找到如下片段
+打开 `conf` 目录下面的 `megawise_config.yaml` 配置文件，找到如下片段
 
 ```
 worker_config:
@@ -105,61 +106,60 @@ gpu:
     partition_memory: 2   # unit: GB
 cuda_profile_query_cnt: -1 #-1 means don't profile, positive integer means the number of querys to profile, other value invalid
 ```
-修改 `worker_num` 和下面的 `gpu` `physical_memory` 和 `partition_memory` ，与前面 `chewie_main.yaml` 文件中相应的设置保持一致。
+修改 `worker_num` 、 `gpu` `physical_memory` 和 `partition_memory` 等参数，使其与前面 `chewie_main.yaml` 文件中相应的设置保持一致。
 
 
 
 ## 1.4 初次启动
 
 ### 1.4.1 启动容器
-+ 使用以下命令启动 MegaWise 的容器
+使用以下命令启动 MegaWise 的容器。
 
 ```bash
 $ docker run --gpus all --shm-size 17179869184 -v /home/zilliz/megawise/conf:/megawise/conf -v  /home/zilliz/megawise/data:/megawise/data -v /home/zilliz/megawise/server_data:/megawise/server_data -v /tmp:/tmp -p 5433:5432 zilliz/megawise:0.3.0-d091919-1679
 ```
 
-+ 参数说明
+参数说明
   
-    + `--shm-size`
+  + `--shm-size`
     
-      docker image 运行时系统分配的内存大小，可以设置为不超过宿主机可用内存，本教程中设置为 16 GB （ 16\*1024\*1024*1024 ）
+    Docker image 运行时系统分配的内存大小，可以设置为不超过宿主机可用内存，本教程中设置为 16 GB （ 16\*1024\*1024*1024 ）
     
-    + `-v`
+  + `-v`
     
-      宿主机和 image 之间的目录映射，用:隔开，前面是宿主机的目录，后面是 docker image 的目录
+    宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录
     
-    + `-p` 
+  + `-p` 
     
-      宿主机和 image 之间的端口映射，用:隔开，前面是宿主机的端口，后面是 docker image 的端口，宿主机的端口可以随意设置未被占用的端口
+    宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口
     
-    + `-v /tmp:/tmp` 
+  + `-v /tmp:/tmp` 
     
-      将 image 中的 `/tmp` 映射到宿主机的 `/tmp` ，这是为了方便查看 MegaWise 的日志，你也可以设置到其他路径下，不过要注意的是你设置的路径需要让当前用户有可读写的权限
+    将 image 中的 `/tmp` 映射到宿主机的 `/tmp` ，这是为了方便查看 MegaWise 的日志，你也可以设置到其他路径下，不过要注意的是你设置的路径需要让当前用户有可读写的权限
     
-+ 注意
+> 注意: 在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
 
-在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
 
-+ 容器启动后，你会看到满屏的启动日志，找到最关键的那条，这说明 MegaWise server 已经启动成功了
+容器启动后，你会看到满屏的启动日志，找到最关键的那条，这说明 MegaWise server 已经启动成功了。
 
 ```
 Megawise server is running...
 ```
 
-注意: 请确保本机的防火墙5433端口被打开
+> 注意: 请确保本机的防火墙5433端口已打开。
 
 ### 1.4.2 查看容器
-- 运行以下命令查看 docker 容器的运行情况
+运行以下命令查看 Docker 容器的运行情况。
 
 ```bash
   $ docker ps 
   CONTAINER ID IMAGE          COMMAND                CREATED     STATUS     PORTS                  NAMES
   4aed62f7f5f1 mega1679:0.1.1 "/docker-entrypoint.…" 1 hours ago Up 1 hours 0.0.0.0:5433->5432/tcp herschel
 ```
-如果看到如上面的结果说明容器启动成功了
+如果看到如上结果说明容器启动成功了。
 
 ### 1.4.3 进入容器
-- 目前容器已经启动，可以进入容器中对 MegaWise 数据库做一些测试， CONTAINER ID 通过 `docker ps` 得到：
+目前容器已经启动，可以进入容器中对 MegaWise 数据库做一些测试， CONTAINER ID 通过 `docker ps` 得到：
 
 ```bash
 $ docker exec -u megawise -it <CONTAINER ID> bash
@@ -203,7 +203,7 @@ megawise@4aed62f7f5f1:/megawise$ cd script/ && ./ps.sh
   megawise   241  0.0  0.0  18032  2936 pts/0    S+   10:00   0:00 /bin/bash ./ps.sh
   megawise   254  0.0  0.0  34420  2920 pts/0    R+   10:00   0:00 ps aux
 ```
- 从上面可以看到 `etcd/plasma/chewie` 以及 postgres 和 MegaWise 的进程均已经启动了，接下来测试数据库是否能访问，在终端执行如下命令：
+从上面可以看到 `etcd/plasma/chewie` 以及 Postgres 和 MegaWise 的进程均已经启动了，接下来测试数据库是否能访问，在终端执行如下命令：
 
   ```bash
   megawise@4aed62f7f5f1:/megawise/script$ ./connect.sh 
@@ -213,7 +213,7 @@ megawise@4aed62f7f5f1:/megawise$ cd script/ && ./ps.sh
   postgres=# 
   ```
 
-  这里使用的是容器中缺省的数据库 postgres ，让我们先创建一个简单的表：
+  这里使用的是容器中缺省的数据库 Postgres ，让我们先创建一个简单的表：
 
   ```sql
   postgres=# create table aaa(i int);
@@ -245,11 +245,11 @@ megawise@4aed62f7f5f1:/megawise$ cd script/ && ./ps.sh
   (3 rows)
   ```
 
-至此， MegaWise 安装测试成功！
+至此，MegaWise 安装测试成功！
 
 ### 1.4.4 停止容器
 
-输入 `exit` 退出容器，在终端停止容器并修改部分设置，然后再次启动
+输入 `exit` 退出容器，在终端停止容器并修改部分设置，然后再次启动。
 
   ```bash
 $ docker stop <CONTAINER ID>
@@ -257,7 +257,7 @@ $ docker stop <CONTAINER ID>
 
 
 
-## 1.5 本地访问 docker 中的 MegaWise
+## 1.5 本地访问 Docker 中的 MegaWise
 
 ### 1.5.1 修改参数
 为了让容器中的数据库能从本地访问，需要先修改一些参数，在宿主机的 `megawise/data` 目录中，先打开 `postgresql.conf` 文件
@@ -287,7 +287,7 @@ $ docker stop <CONTAINER ID>
 在文件的末尾加上如下一行（0.0.0.0/0）。这样设置后，可以在本机通过 psql 直接访问容器中的 MegaWise ，而且不用输入密码。如果您需要从其他的机器访问这个容器中的 MegaWise ，请修改这里的 IP 设置。
 
   ```
-  host    all             all             0.0.0.0/0         trust
+  host    all             all             0.0.0.0/0         password
   ```
 
 ### 1.5.2 启动 MegaWise
@@ -310,10 +310,10 @@ $ psql --username=megawise -h 192.168.1.65 -p 5433 -d postgres
 导入一部分测试数据，以方便之后验证 Infini 图形渲染引擎和前端可视化组件的安装。测试数据抽取自 Uber 开放的纽约出租车订单数据，记录数 100,000 条。
 
 ### 1.6.1 新建一个用户
-通过以下命令，为 Infini 可视化组件创建一个用户：
+通过以下命令，为 Infini 可视化组件创建一个用户'zilliz'：
 
 ```sql
-postgres=# CREATE USER zilliz WITH passward 'zilliz';
+postgres=# CREATE USER zilliz WITH password 'zilliz';
 ```
 
 ### 1.6.2 创建一个新表
