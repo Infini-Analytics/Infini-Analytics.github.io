@@ -9,7 +9,7 @@
 
 为帮助企业用户应对数据时代新的挑战， ZILLIZ 公司设计研发了新一代海量时空数据可视化分析引擎 Infini Analytics ，具有完整的自主知识产权。 Infini Analytics 率先使用图形处理单元（ GPU ）的大规模并行处理和视觉渲染能力进行数据可视化呈现。与传统方案相比， Infini Analytics 平台具备高吞吐、高性价比、低延时三重优势，单位算力成本降至传统方案的 10% 。用户可以对十亿级数据集进行查询和可视化交互，并获得秒内响应。
 
-![InfiniAnalytics](./img/InfiniAnalytics.png)
+![InfiniAnalytics](./assets/InfiniAnalytics.png)
 > **Infini Analytics 方案包括：**
 > 1. SQL 引擎 MegaWise
 > 2. Infini 图形渲染引擎
@@ -181,33 +181,33 @@ Vega 描述语言由著名游戏引擎 D3 的创建者开发，旨在对复杂�
 
 - 汇总分析纽约出租车一个月的订单情况（超过50万笔）
 
-  ![taxi01](./img/taxi01.jpg)
+  ![taxi01](./assets/taxi01.jpg)
   > - 地图定位按订单到达位置显示
   > - 数据点按订单金额着色，越红代表订单金额越高
 
 - 缩放地图，分析指定区域的订单情况
   
-  ![taxi04](./img/taxi04.jpg)
+  ![taxi04](./assets/taxi04.jpg)
   
 - 按时间窗口与车辆运营商进行分析过滤
-  ![taxi03](./img/taxi03.jpg)
+  ![taxi03](./assets/taxi03.jpg)
 
 ## 上海市渣土车 GPS 轨迹
 
 以下案例使用的数据来自上海市政府公开数据。
 
 - 上海市所有渣土车在一天内的 GPS 定位点（超过200万个定位点）
-![渣土车1](./img/渣土车1.png)
+![渣土车1](./assets/渣土车1.png)
 
   
 
 - 分析指定时间段，指定区域内的渣土车行驶情况。
-![渣土车2](./img/渣土车2.png)
+![渣土车2](./assets/渣土车2.png)
 
   
 
 - 分析某一具体车辆的行驶轨迹
-![渣土车3](./img/渣土车3.png)
+![渣土车3](./assets/渣土车3.png)
 
 
 
