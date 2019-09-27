@@ -5,7 +5,7 @@
 ![添加仪表盘](./assets/dashboard-list.png)
 ![空白的仪表盘](./assets/empty-dashboard.png)
 
-如果你点击仪表盘按钮，你可以看到刚刚新建的仪表盘已经被添加到列表种
+如果你点击仪表盘按钮，你可以看到刚刚新建的仪表盘已经被添加到列表中
 
 ![已添加](./assets/new-dashboard-added.png)
 

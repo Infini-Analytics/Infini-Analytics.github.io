@@ -60,7 +60,7 @@
 6. 打开任意浏览器，我们优先支持 Chrome 和 Firefox
 
    ```shell
-   # 输入inifi安装的机器的ip或者host地址，默认是80端口
+   # 输入infini安装的机器的ip或者host地址，默认是80端口
    # 如果您修改了80端口，请加上端口号
    http://ip_or_host_where_infini_installed
    ```
