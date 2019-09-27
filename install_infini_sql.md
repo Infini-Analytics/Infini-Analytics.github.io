@@ -160,11 +160,13 @@ Megawise server is running...
 
 ### 1.4.3 进入容器
 - 目前容器已经启动，可以进入容器中对 MegaWise 数据库做一些测试， CONTAINER ID 通过 `docker ps` 得到：
+
 ```bash
 $ docker exec -u megawise -it <CONTAINER ID> bash
   
 megawise@4aed62f7f5f1:/megawise$
 ```
+
 看到上面的结果说明已经进入容器中，并位于 `/megawise/` 目录下，接下来看看进程的启动情况:
 
 ```bash
