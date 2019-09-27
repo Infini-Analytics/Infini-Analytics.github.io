@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [White Paper](README.md)
+* [White Paper](white_paper.md)
