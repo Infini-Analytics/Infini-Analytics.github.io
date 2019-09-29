@@ -11,7 +11,6 @@
     tpep_dropoff_datetime timestamp,
     passenger_count int,
     trip_distance float,
-    
     pickup_longitute float,
     pickup_latitute float,
     dropoff_longitute float,
