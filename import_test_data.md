@@ -6,19 +6,19 @@
    ```
    postgres=# drop table if exists nyc_taxi;
    postgres=# create table nyc_taxi(
-    vendor_id text,
-    tpep_pickup_datetime timestamp,
-    tpep_dropoff_datetime timestamp,
-    passenger_count int,
-    trip_distance float,
-    pickup_longitute float,
-    pickup_latitute float,
-    dropoff_longitute float,
-    dropoff_latitute float,
-    fare_amount float,
-    tip_amount float,
-    total_amount float
-    );
+       vendor_id text,
+       tpep_pickup_datetime timestamp,
+       tpep_dropoff_datetime timestamp,
+       passenger_count int,
+       trip_distance float,
+       pickup_longitute float,
+       pickup_latitute float,
+       dropoff_longitute float,
+       dropoff_latitute float,
+       fare_amount float,
+       tip_amount float,
+       total_amount float
+       );
    postgres=# drop extension zdb_fdw;
    postgres=# create extension zdb_fdw;
    ```    
