@@ -10,9 +10,9 @@
 ## 安装前提
 
 - 运行 MegaWise Docker 镜像要求服务器的操作系统为 Ubuntu 16.04 及以上版本。
-- 禁用 Nouveau 驱动，并安装 NVIDIA driver 430，具体参照 [安装 NVIDIA 驱动](#安装 NVIDIA 驱动) 。如已安装，请使用 `nvidia-smi` 命令检查是否安装成功。
-- [安装 Docker](#安装 Docker)，版本不低于1.12，建议安装 Docker 19.03。如已安装，请使用 `docker -v` 命令检查。
-- [安装NVIDIA container toolkit](#安装NVIDIA Docker runtime)。
+- 禁用 Nouveau 驱动，并安装 NVIDIA driver 430，具体参照 [安装 NVIDIA 驱动](#安装-NVIDIA-驱动) 。如已安装，请使用 `nvidia-smi` 命令检查是否安装成功。
+- [安装 Docker](#安装-Docker)，版本不低于1.12，建议安装 Docker 19.03。如已安装，请使用 `docker -v` 命令检查。
+- [安装NVIDIA container toolkit](#安装-NVIDIA-container-toolkit)。
 
 ### 安装 NVIDIA 驱动
 
@@ -88,7 +88,7 @@ docker -v
 ```
 Docker version 18.09.7, build 2d0083d
 ```
-如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始[安装 NVIDIA container toolkit](#安装NVIDIA container toolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
+如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始[安装 NVIDIA container toolkit](#安装-NVIDIA-container-toolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
 
 > 注意：MegaWise Docker 镜像不支持1.12以下版本的Docker环境。
 
