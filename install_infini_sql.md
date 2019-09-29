@@ -87,7 +87,7 @@ docker -v
 ```
 Docker version 18.09.7, build 2d0083d
 ```
-如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始[安装 NVIDIA container toolkit](#安装NVIDIA container toolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
+如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始[安装 NVIDIA container toolkit](#安装NVIDIAcontainertoolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
 
 > 注意：MegaWise Docker 镜像不支持1.12以下版本的Docker环境。
 
