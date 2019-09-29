@@ -10,3 +10,5 @@
 
 
 ## [Infini Analytics 白皮书](white_paper.md)
+
+产品体验请联系：support@zilliz.com

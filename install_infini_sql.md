@@ -3,16 +3,7 @@
 
 本文档将对 MegaWise Docker 容器镜像的安装和配置操作进行介绍，完成本文档中的所有操作后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要分为以下部分：
 
-- **安装前提**。该部分用于安装和配置 MegaWise Docker 镜像的运行环境，主要包括了 NVIDIA 驱动、Docker 和 NVIDIA Docker runtime 的安装。
-- **MegaWise Docker 镜像的获取和配置**。该部分包括了镜像的获取、Docker 设置、目录设置、MegaWise 启动参数设置四个部分。
-- **安装验证**。启动容器并检查容器的运行情况和配置的正确性。
 
-## 安装前提
-
-- 运行 MegaWise Docker 镜像要求服务器的操作系统为 Ubuntu 16.04 及以上版本。
-- 禁用 Nouveau 驱动，并安装 NVIDIA driver 430，具体参照 [安装 NVIDIA 驱动](#安装NVIDIA驱动) 。如已安装，请使用 `nvidia-smi` 命令检查是否安装成功。
-- [安装 Docker](#安装Docker)，版本不低于1.12，建议安装 Docker 19.03。如已安装，请使用 `docker -v` 命令检查。
-- [安装NVIDIA container toolkit](#安装NVIDIAcontainertoolkit)。
 
 ### 安装 NVIDIA 驱动
 
