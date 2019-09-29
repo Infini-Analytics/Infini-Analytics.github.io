@@ -1,7 +1,7 @@
 
-# 2. 安装 Infini 可视化组件
+# 安装 Infini 可视化组件
 
-## 2.1 安装前提
+## 安装前提
 
 1. 请确认已安装以下软件
 
@@ -11,7 +11,7 @@
 2. 请确认 Megawise 已经被安装，并示例数据已经导入
     - [安装 Megawise](install_infini_sql.md)
 
-## 2.2 使用 Docker Compose 运行 Infini 可视化组件
+## 使用 Docker Compose 运行 Infini 可视化组件
 
 1. 确保 docker-compose 正在运行 
 
