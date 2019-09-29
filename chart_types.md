@@ -1,6 +1,6 @@
 # Infini 可视化组件类型
 
-Infini 提供从最简单的数图到地图
+Infini 提供从最简单的数图到地图。
 
 ## 数图
 ![数图](./assets/number.png)
