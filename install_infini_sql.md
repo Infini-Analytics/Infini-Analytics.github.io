@@ -1,9 +1,18 @@
 
 # 安装 Infini SQL 引擎（ MegaWise ）
 
-本文档将对 MegaWise Docker 容器镜像的安装和配置操作进行介绍，完成本文档中的所有操作后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要分为以下部分：
+本文档主要介绍 MegaWise Docker 容器镜像的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
 
+- **安装前提**。该部分用于安装和配置 MegaWise Docker 镜像的运行环境，主要包括了 NVIDIA 驱动、Docker 和 NVIDIA container toolkit 的安装。
+- **MegaWise Docker 镜像的获取和配置**。该部分包括 Docker 镜像的获取、初始化设置、启动 MegaWise、修改 PostgreSQL 相关参数等。
+- **安装验证**。启动容器并检查容器的运行情况和配置的正确性。
 
+## 安装前提
+
+- 运行 MegaWise Docker 镜像要求服务器的操作系统为 Ubuntu 16.04 及以上版本。
+- 禁用 Nouveau 驱动，并安装 NVIDIA driver 430，具体参照 [安装 NVIDIA 驱动](#安装 NVIDIA 驱动) 。如已安装，请使用 `nvidia-smi` 命令检查是否安装成功。
+- [安装 Docker](#安装 Docker)，版本不低于1.12，建议安装 Docker 19.03。如已安装，请使用 `docker -v` 命令检查。
+- [安装NVIDIA container toolkit](#安装NVIDIA Docker runtime)。
 
 ### 安装 NVIDIA 驱动
 
@@ -47,6 +56,7 @@
    ```
    sudo reboot  
    ```
+
 4. 测试是否安装成功：
 
    ```
@@ -78,7 +88,7 @@ docker -v
 ```
 Docker version 18.09.7, build 2d0083d
 ```
-如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始 [安装 NVIDIA container toolkit](#安装NVIDIAcontainertoolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
+如果系统中已安装有 Docker 且 Docker 版本不低于1.12，则可跳过 Docker 安装步骤，开始[安装 NVIDIA container toolkit](#安装NVIDIA container toolkit)。如果系统中未安装 Docker，则参照以下步骤开始安装 Docker。
 
 > 注意：MegaWise Docker 镜像不支持1.12以下版本的Docker环境。
 
@@ -132,12 +142,14 @@ Docker version 18.09.7, build 2d0083d
    sudo apt-key add -
    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
    ```
+
 2. 更新下载源。
 
    ```
    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
    sudo tee /etc/apt/sources.list.d/nvidia-docker.list
    ```
+
 3. 根据之前获取的 Docker 版本，使用 apt-get 安装 NVIDIA runtime。如果 Docker 为19.03或者更高的版本，则安装 nvidia-container-toolkit。
 
    ```
@@ -151,11 +163,13 @@ Docker version 18.09.7, build 2d0083d
    sudo apt-get update
    sudo apt-get install -y nvidia-docker2
    ```
+
 4. 重启 Docker daemon
 
    ```
    sudo systemctl restart docker
    ```
+
 5. 验证 NVIDIA container toolkit 是否安装成功。
 
    ```
@@ -189,7 +203,9 @@ Docker version 18.09.7, build 2d0083d
    zilliz/megawise     0.3.0-d091919-1679      0523f2b43444        5 hours ago         4.95GB
    ```
 
-### 设置目录
+### 初始化设置
+
+#### 设置目录
 
 在服务器上创建一个空白的目录 ` megawise`，这个目录将作为 MegaWise Docker 镜像时映射的文件和目录的总目录。在本文档的后续示例中，假设该目录的路径为 `/home/data/megawise` 。
 
@@ -215,7 +231,7 @@ $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/d
 
 在data目录下创建3个空白的子目录，分别是config，data和server_data
 
-### 设置 MegaWise 启动参数
+#### 设置 MegaWise 启动参数
 
 1. 打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件，找到如下片段：
 
@@ -257,7 +273,10 @@ $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/d
 
    修改 `worker_num` 、`gpu physical_memory` 和 `partition_memory` 等参数，使其与前面 `chewie_main.yaml` 文件中相应的设置保持一致。其中 `worker_num` 与 `gpu_num` 对应。
 
-### 启动容器
+### 启动 MegaWise
+
+#### 启动容器
+
 启动 MegaWise 的容器（路径和镜像 ID 使用文档中的示例）
 
 ```
@@ -307,8 +326,8 @@ docker run --gpus all --shm-size 17179869184 \
 Megawise server is running...
 ```
 
-### 查看容器
-运行以下命令查看 Docker容器的运行情况：
+#### 查看容器
+运行以下命令查看 Docker 容器的运行情况：
 
   ```
 user@server:~/data/megawise$ docker ps 
@@ -317,9 +336,9 @@ CONTAINER ID IMAGE          COMMAND                CREATED     STATUS     PORTS 
   ```
 如果看到类似上面的结果，则说明容器的启动成功了。
 
-### 停止容器
+#### 停止容器
 
-在终端中输入 exit 离开容器环境，通过以下命令停止容器。
+若要停止 MegaWise 容器，请在终端中输入 exit 离开容器环境。
 
 ```
  user@server:~/data/megawise$ docker stop 4aed62f7f5f1 
