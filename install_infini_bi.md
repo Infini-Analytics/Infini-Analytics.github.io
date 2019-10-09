@@ -32,7 +32,7 @@
     # 默认web服务端口
     LOCAL_PORT=80
     # megawise ip
-    MEGAWISE_HOST=l92.168.1.1
+    MEGAWISE_HOST=192.168.1.1
     # megawise 用户名
     MEGAWISE_USER=zilliz
     # megawise 密码
