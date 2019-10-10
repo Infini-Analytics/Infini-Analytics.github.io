@@ -89,12 +89,12 @@ https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/sched
 ### 启动MegaWise
 
 ```bash
-$ docker run --gpus all --shm-size 17179869184 \ 
--v /home/$USER/megawise/conf:/megawise/conf \ 
--v /home/$USER/megawise/data:/megawise/data \ 
--v /home/$USER/megawise/server_data:/megawise/server_data \ 
--v /tmp:/tmp \ 
--p 5433:5432 \ 
+$ docker run --gpus all --shm-size 17179869184 \
+-v /home/$USER/megawise/conf:/megawise/conf \
+-v /home/$USER/megawise/data:/megawise/data \
+-v /home/$USER/megawise/server_data:/megawise/server_data \
+-v /tmp:/tmp \
+-p 5433:5432 \
 zilliz/megawise:0.3.0-d091919-1679
 ```
 
