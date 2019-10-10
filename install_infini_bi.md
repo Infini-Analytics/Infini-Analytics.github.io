@@ -12,7 +12,9 @@
     - [安装 Megawise](install_infini_sql.md)
     - [导入示例数据](import_test_data.md)
 
-## 使用 Docker Compose 运行 Infini 可视化组件
+
+
+## 使用 Docker Compose 运行 Infini 
 
 1. 确保 docker-compose 正在运行 
 
@@ -20,13 +22,13 @@
    $ docker-compose --version
    ```
 
-2. 下载如下两个配置文件到同一文件目录
+2. 下载两个配置文件到同一文件目录
 
    ```bash
    $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/.env \
    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/docker-compose.yml
    ```
-3. 修改 `.env` file 
+3. 修改 `.env` 文件
     ```yml
     # 默认web服务端口
     LOCAL_PORT=80
@@ -49,13 +51,15 @@
    $ docker-compose -f docker-compose.yml up
    ```
 
-5. 修改 host, 打开 `/etc/hosts` 文件，添加以下一条
+5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
    ```shell
     #/etc/hosts
     192.168.1.1 infini
    ```
    > 注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
-
+>
+   > 若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加
+   
 6. 打开任意浏览器，优先支持 Chrome 和 Firefox
 
    ```shell
@@ -63,22 +67,30 @@
    http://192.168.1.1
    ```
 
-  #### 现在可以看到登录界面
-  ![login](./assets/login.png)
 
-  #### 输入用户名和密码进行登录
+
+## 可视化界面
+
+现在可以看到登录界面
+
+![login](./assets/login.png)
+
+**输入用户名和密码进行登录：**
+
   - 用户名: zilliz
   - 密码: zilliz
 
-  如果你可以看到如下界面，说明Infini 可视化组件已经成功启动了  ![dashboard-list](./assets/dashboard-list.png)
+如果你可以看到如下界面，说明Infini 可视化组件已经成功启动了  ![dashboard-list](./assets/dashboard-list.png)
 
 单击New York Taxi Boards，出现以下界面
 
 ![New York Taxi data](./assets/nyc-demo.png)
 
-7. 关闭 Infini 可视化组件
 
-   ```bash
-   # Stop Infini
-   $ docker-compose -f docker-compose.yml down
-   ```
+
+## 关闭 Infini 可视化组件
+
+```bash
+# Stop Infini
+$ docker-compose -f docker-compose.yml down
+```
