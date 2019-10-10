@@ -14,7 +14,7 @@
 1. 在megawise中创建一个新表并安装FDW插件
    ```sql
    postgres=# create user gis superuser password 'gis';
-   postgres=# create database owner gis;
+   postgres=# create database gis owner gis;
    postgres=# \c gis
    gis=# drop table if exists nyc_taxi;
    gis=# create table nyc_taxi(

@@ -130,7 +130,7 @@ Megawise server is running...
 
 ### Docker容器访问
 
-1. 查看MegaWise Docker容器，获取<CONTAINER ID>信息
+1. 查看MegaWise Docker容器，获取CONTAINER ID信息
 
    ```bash
    $ docker ps 
@@ -204,7 +204,13 @@ Megawise server is running...
    host    all             all             0.0.0.0/0         password
    ```
 
-3. 容器外部访问MegaWise
+3. 重启MegaWise
+
+   ```bash
+   $ docker restart <CONTAINER ID>
+   ```
+
+4. 容器外部访问MegaWise
 
    ```bash
    $ psql --username=megawise -h 192.168.1.1 -p 5433 -d postgres
