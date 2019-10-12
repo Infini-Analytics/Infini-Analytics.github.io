@@ -202,7 +202,7 @@ Docker version 18.09.7, build 2d0083d
    $ ./install_megawise.sh [参数1，必选] [参数2，可选]
    ```
 
-   > 参数1：MegaWise安装目录的地址，
+   > 参数1：MegaWise安装目录的地址，请确保该目录不存在
    >
    > 参数2：MegaWise镜像id，可选，默认'0.3.0-d091919-1679'
    >
