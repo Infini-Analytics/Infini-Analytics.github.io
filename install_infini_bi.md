@@ -5,7 +5,7 @@
 1. 请确认已安装以下软件
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
-2. 请确认已安装 MegaWise ，并开启MegaWise服务
+2. 请确认已安装 MegaWise ，开启MegaWise服务并导入示例数据
    - [安装 Megawise](install_infini_sql.md)
 
 
@@ -80,11 +80,13 @@
 - 用户名: zilliz
 - 密码: zilliz
 
-如果你可以看到如下界面，说明Infini 可视化组件已经成功启动了  ![dashboard-list](./assets/dashboard-list.png)
+![dashboard-list](./assets/dashboard-list.png)
 
 单击New York Taxi Boards，出现以下界面
 
 ![New York Taxi data](./assets/nyc-demo.png)
+
+如果你可以看到以上界面，说明Infini 可视化组件已经成功启动了  
 
 
 
