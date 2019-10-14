@@ -56,9 +56,9 @@
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址 </font>
+   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
    >
-   > ​<font color='red'>     若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
+   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
 
    ```shell
     #/etc/hosts
