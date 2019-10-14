@@ -105,6 +105,7 @@ MegaWise 的矢量化查询技术可以同时应用到 CPU 。现代 CPU 普遍�
 
 > 友商数据引用自：https://tech.marksblogg.com/benchmarks.html
 
+
 # 图形渲染引擎： Picasso 
 
 ## 服务器端渲染
@@ -146,6 +147,7 @@ Vega 描述语言由著名游戏引擎 D3 的创建者开发，旨在对复杂�
 >- t_echarts_render 为 echarts 渲染时间
 >- echarts 为 echarts 方案数据传输与渲染时间之和
 >- gis 为 Infini 方案渲染与数据传输时间之和
+
 
 # 可视化组件： Infini
 
