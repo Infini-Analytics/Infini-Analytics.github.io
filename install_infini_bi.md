@@ -28,6 +28,8 @@
 3. 修改 `.env` 文件
 
    ```yml
+   # 默认API服务地址
+   API_URL=http://192.168.1.106:9000
    # 默认web服务端口
    LOCAL_PORT=80
    # megawise ip
