@@ -51,7 +51,7 @@
 
 2. 使用 apt 工具安装 NVIDIA 驱动
 
-   > 注意：Megawies 当前仅支持430版本的 NVIDIA 驱动。
+   > <font color='red'>注意：MegaWise 当前仅支持430及以上版本的 NVIDIA 驱动。安装或更新NVIDIA驱动存在一定风险，有可能导致显示系统崩溃。在操作前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用430及以上版本的 NVIDIA 驱动。</font>
 
    ```bash
    $ sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -145,19 +145,14 @@
    sudo tee /etc/apt/sources.list.d/nvidia-docker.list
    ```
 
-3. 根据之前获取的 Docker 版本，使用 apt-get 安装 NVIDIA runtime。如果 Docker 为19.03或者更高的版本，则安装 nvidia-container-toolkit。
+3. 安装 NVIDIA runtime。
 
    ```bash
    $ sudo apt-get update
    $ sudo apt-get install -y nvidia-container-toolkit
    ```
 
-   如果 Docker 版本低于19.03，则使用以下命令安装 nvidia-docker2。
-
-   ```bash
-   $ sudo apt-get update
-   $ sudo apt-get install -y nvidia-docker2
-   ```
+ 
 
 4. 重启 Docker daemon
 
@@ -197,7 +192,15 @@
    > 参数1：MegaWise安装目录的地址，请确保该目录不存在
    >
    > 参数2：MegaWise镜像id，可选，默认'0.3.0-d091919-1679'
-   >
+>
    > 示例：./install_megawise.sh  /home/$USER/megawise '0.3.0-d091919-1679'
 
-若出现`Successfully installed MegaWise and imported test data`表示成功安装MegaWise并导入示例数据。
+   该语句所执行的操作：
+   
+   > 1. 拉取MegaWise docker镜像；
+   > 2. 下载配置文件和示例数据；
+   > 3. 启动MegaWise；
+   > 4. 准备示例数据并导入MegaWise；
+   > 5. 修改相关配置参数，重启MegaWise服务。
+
+若出现`Successfully installed MegaWise and imported test data`表示MegaWise成功安装并导入示例数据。

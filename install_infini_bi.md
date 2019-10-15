@@ -18,6 +18,10 @@
    $ docker-compose --version
    ```
 
+    如果终端能够显示 docker-compose 的版本信息，则说明系统中已经安装有对应版本的 docker-compose。在如下的示例中 docker-compose 的版本为1.24.1。
+    ```
+    docker-compose version 1.24.1, build 4667896b
+    ```
 2. 下载两个配置文件到同一文件目录
 
    ```bash
@@ -27,11 +31,17 @@
 
 3. 修改 `.env` 文件
 
+   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 ip 地址
+   >
+   > 请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 ip 地址。</font>
+
    ```yml
+   # 默认API服务地址
+   API_URL=http://192.168.1.60:9000
    # 默认web服务端口
    LOCAL_PORT=80
    # megawise ip
-   MEGAWISE_HOST=192.168.1.1
+   MEGAWISE_HOST=192.168.1.106
    # megawise 用户名
    MEGAWISE_USER=zilliz
    # megawise 密码
@@ -50,21 +60,21 @@
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
+   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 ip 地址
+   >
+   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
 
    ```shell
     #/etc/hosts
-    192.168.1.1 infini
+    192.168.1.60 infini
    ```
 
-   > 注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
-   >
-   > ​		  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加
 
 6. 打开任意浏览器，优先支持 Chrome 和 Firefox
 
    ```shell
    # 如果修改了80端口，请加上端口号
-   http://192.168.1.1
+   http://192.168.1.60
    ```
 
 
@@ -79,6 +89,11 @@
 
 - 用户名: zilliz
 - 密码: zilliz
+
+## 填写Megawise数据库信息
+登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面
+
+![fill-megawise-info](./assets/fill-megawise-info.png)
 
 ![dashboard-list](./assets/dashboard-list.png)
 
