@@ -18,6 +18,10 @@
    $ docker-compose --version
    ```
 
+    如果终端能够显示 docker-compose 的版本信息，则说明系统中已经安装有对应版本的 docker-compose。在如下的示例中 docker-compose 的版本为1.24.1。
+    ```
+    docker-compose version 1.24.1, build 4667896b
+    ```
 2. 下载两个配置文件到同一文件目录
 
    ```bash
@@ -26,6 +30,8 @@
    ```
 
 3. 修改 `.env` 文件
+
+   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行MegaWise docker 的服务器的 ip 地址。</font>
 
    ```yml
    # 默认API服务地址
@@ -52,15 +58,15 @@
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
+   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
+   >
+   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
 
    ```shell
     #/etc/hosts
     192.168.1.1 infini
    ```
-
-   > 注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
-   >
-   > ​		  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加
+  
 
 6. 打开任意浏览器，优先支持 Chrome 和 Firefox
 

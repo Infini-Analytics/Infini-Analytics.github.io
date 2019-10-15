@@ -323,7 +323,7 @@ docker run --gpus all --shm-size 17179869184 \
 容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
 
 ```
-Megawise server is running...
+MegaWise server is running...
 ```
 
 #### 查看容器

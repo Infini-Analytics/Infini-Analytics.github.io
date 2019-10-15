@@ -16,7 +16,7 @@
  2. Infini 图形渲染引擎
  3. 前端可视化组件
 
-# Infini SQL Engine: MegaWise
+# SQL执行引擎: MegaWise
 
 ## 对 SQL 的原生支持
 
@@ -105,7 +105,8 @@ MegaWise 的矢量化查询技术可以同时应用到 CPU 。现代 CPU 普遍�
 
 > 友商数据引用自：https://tech.marksblogg.com/benchmarks.html
 
-# Picasso 图形渲染引擎
+
+# 图形渲染引擎： Picasso 
 
 ## 服务器端渲染
 
@@ -147,7 +148,8 @@ Vega 描述语言由著名游戏引擎 D3 的创建者开发，旨在对复杂�
 >- echarts 为 echarts 方案数据传输与渲染时间之和
 >- gis 为 Infini 方案渲染与数据传输时间之和
 
-# Infini 可视化组件
+
+# 可视化组件： Infini
 
 前端组件基于 React 构建，各类图表基于 D3 开发。用户可以灵活配置各个图表，支持针对多列数据进行聚合或者过滤。通过我们特有的 crossfilter sql 生成功能，用户可以进行多 chart 交互操作，并实时更新图表。
 
