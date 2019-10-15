@@ -191,12 +191,12 @@
 
    > 参数1：MegaWise安装目录的地址，请确保该目录不存在
    >
-   > 参数2：MegaWise镜像id，可选，默认'0.3.0-d091919-1679'
->
-   > 示例：./install_megawise.sh  /home/$USER/megawise '0.3.0-d091919-1679'
+   > 参数2：MegaWise镜像id，可选，默认'0.4.0'
+   >
+   > 示例：./install_megawise.sh  /home/$USER/megawise '0.4.0'
 
    该语句所执行的操作：
-   
+
    > 1. 拉取MegaWise docker镜像；
    > 2. 下载配置文件和示例数据；
    > 3. 启动MegaWise；
