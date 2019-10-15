@@ -195,11 +195,11 @@
    >
    > 示例：./install_megawise.sh  /home/$USER/megawise '0.3.0-d091919-1679'
 
-    若出现`Successfully installed MegaWise and imported test data`表示成功安装MegaWise并导入示例数据。
+   该语句所执行的操作：
 
-    脚本所做操作：
+   > 1. 拉取MegaWise docker镜像；
+   > 2. 下载MegaWise配置文件，并启动MegaWise；
+   > 3. 准备示例数据并导入MegaWise；
+   > 4. 修改相关配置参数，重启MegaWise服务。
 
-        1. 获取脚本输入参数;
-        2. 拉取docker镜像;
-        3. 启动docker，初始化MegaWise服务;
-        4. 准备样例数据并导入MegaWise;
+若出现`Successfully installed MegaWise and imported test data`表示MegaWise成功安装并导入示例数据。
