@@ -169,7 +169,7 @@ Vega 描述语言由著名游戏引擎 D3 的创建者开发，旨在对复杂�
 
 - 缩放地图，分析指定区域的订单情况
   
-  ![taxi04](./assets/taxi04.jpg)
+  ![taxi04](./assets/taxi02.jpg)
   
 - 按时间窗口与车辆运营商进行分析过滤
   ![taxi03](./assets/taxi03.jpg)
