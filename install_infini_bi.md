@@ -34,6 +34,8 @@
    > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行MegaWise docker 的服务器的 ip 地址。</font>
 
    ```yml
+   # 默认API服务地址
+   API_URL=http://192.168.1.106:9000
    # 默认web服务端口
    LOCAL_PORT=80
    # megawise ip
