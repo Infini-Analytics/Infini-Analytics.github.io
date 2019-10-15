@@ -192,14 +192,15 @@
    > 参数1：MegaWise安装目录的地址，请确保该目录不存在
    >
    > 参数2：MegaWise镜像id，可选，默认'0.3.0-d091919-1679'
-   >
+>
    > 示例：./install_megawise.sh  /home/$USER/megawise '0.3.0-d091919-1679'
 
    该语句所执行的操作：
-
+   
    > 1. 拉取MegaWise docker镜像；
-   > 2. 下载MegaWise配置文件，并启动MegaWise；
-   > 3. 准备示例数据并导入MegaWise；
-   > 4. 修改相关配置参数，重启MegaWise服务。
+   > 2. 下载配置文件和示例数据；
+   > 3. 启动MegaWise；
+   > 4. 准备示例数据并导入MegaWise；
+   > 5. 修改相关配置参数，重启MegaWise服务。
 
 若出现`Successfully installed MegaWise and imported test data`表示MegaWise成功安装并导入示例数据。

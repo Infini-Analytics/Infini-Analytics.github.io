@@ -31,15 +31,17 @@
 
 3. 修改 `.env` 文件
 
-   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行MegaWise docker 的服务器的 ip 地址。</font>
+   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 ip 地址
+   >
+   > 请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 ip 地址。</font>
 
    ```yml
    # 默认API服务地址
-   API_URL=http://192.168.1.106:9000
+   API_URL=http://192.168.1.60:9000
    # 默认web服务端口
    LOCAL_PORT=80
    # megawise ip
-   MEGAWISE_HOST=192.168.1.1
+   MEGAWISE_HOST=192.168.1.106
    # megawise 用户名
    MEGAWISE_USER=zilliz
    # megawise 密码
@@ -58,21 +60,21 @@
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.1` 改成当前运行Infini docker 的服务器的 ip 地址
+   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 ip 地址
    >
    >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
 
    ```shell
     #/etc/hosts
-    192.168.1.1 infini
+    192.168.1.60 infini
    ```
-  
+
 
 6. 打开任意浏览器，优先支持 Chrome 和 Firefox
 
    ```shell
    # 如果修改了80端口，请加上端口号
-   http://192.168.1.1
+   http://192.168.1.60
    ```
 
 
