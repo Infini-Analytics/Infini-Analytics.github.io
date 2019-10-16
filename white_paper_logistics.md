@@ -2,23 +2,21 @@
 
 # 概述
 
-Zilliz公司通过GPU加速的核心算法能够为物流行业的决策者提供针对时空信息数据流的实时可视化的分析能力，通过Inifini物流行业可视化面板，使得物流、交通运输、航运等行业的客户能够更有效的发现业务瓶颈、控制运营风险。
+Zilliz公司通过GPU加速的核心算法能够为物流行业的决策者提供针对时空信息数据流的实时可视化的分析能力，通过Inifini物流行业可视化面板，使得物流、交通运输、航运等行业的用户能够更有效的发现业务瓶颈、控制运营风险。
 
-- 98%的物流提供商都深信数据驱动的决策对整个行业的供应链活动是至关重要的
+- 98%的物流提供商都深信数据驱动的决策对整个行业的供应链是至关重要的
 - 71%的航运提供商相信数据分析的实时性对运营来说至关重要
 - 物流行业的最后一公里的运输成本占据了整体成本的30%
 
-From the production line to the last mile
-OmniSci lets logistics analystsvisually interact with billions of rows of telematics and supply chain data in real-time. Visualize your operations during moments of peak demand, cross-filter by actual available inventory, and interact with location data on a driver’s routing options to streamline your operations and keep everything on schedule.
+从生产线到最后一公里的全供应链分析能力
 
-Forecast supply needs based upon real-time demand data streaming from point-of-sale systems or warehouse sensor data
-Mitigate operational risk by identifying unplanned factory or fleet maintenance requirements
-Optimize routing and achieve last-mile delivery efficiency by comparing external GPS, weather, and road maintenance data with internal staffing levels and fleet schedules
+Infini时空数据分析平台为物流行业的数据分析师提供了对数10亿行车辆运行数据和供应链管理数据进行实时分析的能力，在业务高峰时可视化您的运营情况，能够将实际可用库存、驾驶员的实时位置信息以及可选线路情况等进行交互式过滤分析，以简化您的运营操作确保一切按照计划准实完成。
 
-从生产线到最后一公里
-Infini时空数据分析平台为物流行业的数据分析师提供了对数10亿行车辆运行数据和供应链管理数据进行实时分析的能力，
+- 通过综合分析各个销售点的实时销售信息以及仓库传感器的信息来预测货物的供给。
+- 通过分析判断计划外的制造商或车队的维护需求以降低运营风险。
+- 通过综合对比外部GPS信息，天气信息,道路维护信息，内部人员出勤信息以及车队运行信息来优化线路选择从而有效的提高最后一公里的交付效率。
 
-
+# GPU超高算力助力超大规模时空数据分析
 
 随着数字化的不断深入，“数据”在人类生活中所扮演的角色日益重要。毫不夸张的讲，我们今天所处的正是一个数据时代。也由此催生了人们对数据分析，数据智能的强烈需求。人类对世界的认识、对社会的管理，都需要通过无所不在的数据进行驱动。伴随革命性的 5G 通信技术，这个时代的数据风暴正变得越来越猛烈：
 
