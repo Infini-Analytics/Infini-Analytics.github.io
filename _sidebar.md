@@ -9,5 +9,6 @@
     1. [安装 Infini 可视化组件](install_infini_bi.md)
     1. [新建 Infini 仪表盘](add_dashboard.md)
     1. [Infini 可视化组件类型](chart_types.md)
+    1. [Bootcamp](https://github.com/Infini-Analytics/Bootcamp)
 * Release Notes
     1. [0.4.0](0.4.0_release_notes.md)
