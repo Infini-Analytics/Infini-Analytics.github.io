@@ -1,4 +1,24 @@
-# Infini Analytics
+# 为物流行业领导者提供车辆信息分析平台
+
+# 概述
+
+Zilliz公司通过GPU加速的核心算法能够为物流行业的决策者提供针对时空信息数据流的实时可视化的分析能力，通过Inifini物流行业可视化面板，使得物流、交通运输、航运等行业的客户能够更有效的发现业务瓶颈、控制运营风险。
+
+- 98%的物流提供商都深信数据驱动的决策对整个行业的供应链活动是至关重要的
+- 71%的航运提供商相信数据分析的实时性对运营来说至关重要
+- 物流行业的最后一公里的运输成本占据了整体成本的30%
+
+From the production line to the last mile
+OmniSci lets logistics analystsvisually interact with billions of rows of telematics and supply chain data in real-time. Visualize your operations during moments of peak demand, cross-filter by actual available inventory, and interact with location data on a driver’s routing options to streamline your operations and keep everything on schedule.
+
+Forecast supply needs based upon real-time demand data streaming from point-of-sale systems or warehouse sensor data
+Mitigate operational risk by identifying unplanned factory or fleet maintenance requirements
+Optimize routing and achieve last-mile delivery efficiency by comparing external GPS, weather, and road maintenance data with internal staffing levels and fleet schedules
+
+从生产线到最后一公里
+Infini时空数据分析平台为物流行业的数据分析师提供了对数10亿行车辆运行数据和供应链管理数据进行实时分析的能力，
+
+
 
 随着数字化的不断深入，“数据”在人类生活中所扮演的角色日益重要。毫不夸张的讲，我们今天所处的正是一个数据时代。也由此催生了人们对数据分析，数据智能的强烈需求。人类对世界的认识、对社会的管理，都需要通过无所不在的数据进行驱动。伴随革命性的 5G 通信技术，这个时代的数据风暴正变得越来越猛烈：
 
