@@ -4,9 +4,9 @@
 
 ![InfiniAnalytics](./assets/InfiniAnalytics.jpg)
 > **Infini Analytics 方案包括：**
-> 1. SQL 引擎 MegaWise
-> 2. Infini 图形渲染引擎
-> 3. 前端可视化组件
+> 1. MegaWise 核心数据计算引擎
+> 2. Picasso 图形渲染引擎
+> 3. Infini 可视化分析平台
 
 
 ## [Infini Analytics 白皮书](white_paper.md)
