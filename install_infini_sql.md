@@ -1,23 +1,31 @@
 
 # 安装 Infini SQL 引擎（ MegaWise ）
 
-本文档主要介绍 MegaWise Docker 容器镜像的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
+本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
 
-- **安装前提**。该部分用于安装和配置 MegaWise Docker 镜像的运行环境，主要包括了 NVIDIA 驱动、Docker 和 NVIDIA container toolkit 的安装。
-- **MegaWise Docker 安装**。该部分包括安装MegaWise，并导入infini示例数据。
+- **安装前提** &ndash;包括硬件要求和软件要求，以及如何安装和配置 MegaWise Docker 的软件运行环境。主要涵盖了 NVIDIA 驱动、Docker 和 NVIDIA container toolkit 的安装。
+- **安装 MegaWise Docker 并导入示例数据** &ndash;包括 MegaWise Docker 的安装以及 infini 示例数据的导入。
 
 
 
 ## 安装前提
 
-- 运行 MegaWise Docker 镜像要求服务器的操作系统为 Ubuntu 16.04 及以上版本。
-- 禁用 Nouveau 驱动，并安装 NVIDIA driver 430，确保安装的 NVIDIA driver 包含OpenGL，具体参照 [安装 NVIDIA 驱动 430](#安装-NVIDIA-驱动) 。如已安装，请使用 `nvidia-smi` 命令检查是否安装成功。
-- [安装 Docker 19.03](#安装-Docker)。如已安装，请使用 `docker -v` 命令检查。
-- [安装NVIDIA container toolkit](#安装-NVIDIA-container-toolkit)。
+### 硬件要求
 
+**!!!需要提供硬件要求信息!!!**
+
+### 软件要求
+
+| 组件                     | 版本                    |
+|--------------------------|-------------------------|
+| 操作系统                 | Ubuntu 16.04 或以上 |
+| NVIDIA 驱动          | 430或以上           |
+| Docker                   | 19.03或以上         |
+| NVIDIA Container Toolkit |  **!!!需要提供版本信息!!!**                      |
 
 
 ### 安装 NVIDIA 驱动
+
 
 1. 禁用 Nouveau 驱动
 
@@ -48,25 +56,42 @@
    ```bash
    $ lsmod | grep nouveau
    ```
-
-2. 使用 apt 工具安装 NVIDIA 驱动
-
-   > <font color='red'>注意：MegaWise 当前仅支持430及以上版本的 NVIDIA 驱动。安装或更新NVIDIA驱动存在一定风险，有可能导致显示系统崩溃。在操作前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用430及以上版本的 NVIDIA 驱动。</font>
+   
+   如果系统中未安装 lsmod 工具，则先安装 lsmod, 然后执行上述命令。
 
    ```bash
-   $ sudo add-apt-repository ppa:graphics-drivers/ppa
-   $ sudo apt update
-   $ sudo apt search nvidia-*
-   $ sudo apt install nvidia-430  
+   $ sudo apt-get install lsmod
    ```
 
-3. 重启系统
+2. 从 [NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us) 下载驱动安装文件。
+
+   > <font color='red'>注意：MegaWise 当前仅支持430及以上版本的 NVIDIA 驱动。安装或更新 NVIDIA 驱动存在一定风险，有可能导致显示系统崩溃。在安装或更新 NVIDIA 驱动前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用430及以上版本的 NVIDIA 驱动。</font>
+
+3. 按 Ctrl+Alt+F1 进入命令行界面并关闭图形界面。
+
+   ```bash
+   $ sudo service lightdm stop
+   ```
+   
+4. 如果您已经安装 NVIDIA 驱动软件，请删除旧的驱动软件。
+
+   ```bash
+   $ sudo apt-get remove nvidia-*
+   ```
+   
+5. 赋予安装文件执行权限并安装驱动软件。下面的示例假设安装文件下载在home目录下。
+
+   ```bash
+   $ sudo chmod a+x NVIDIA-Linux-x86_64-430.50.run
+   $ sudo ./NVIDIA-Linux-x86_64-430.50.run
+
+6. 重启系统
 
    ```bash
    $ sudo reboot  
    ```
 
-4. 测试是否安装成功
+7. 测试是否安装成功
 
    ```bash
    $ sudo nvidia-smi  
@@ -87,13 +112,13 @@
    ```
 ### 安装 Docker
 
-1. 更新源
+1. 更新源。
 
    ```bash
    $ sudo apt-get update
    ```
 
-2. 使用 curl 工具下载最新版本的 Docker
+2. 使用 curl 工具下载最新版本的 Docker。
 
    ```bash
    $ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -152,9 +177,7 @@
    $ sudo apt-get install -y nvidia-container-toolkit
    ```
 
- 
-
-4. 重启 Docker daemon
+4. 重启 Docker daemon。
 
    ```bash
    $ sudo systemctl restart docker
@@ -171,11 +194,11 @@
 
 
 
-## 开始安装 Infini SQL 引擎（ MegaWise ）
+## 安装 MegaWise 并导入示例数据
 
-1. 请确保当前用户对目录 `/tmp` 有读写权限
+1. 请确保当前用户对目录 `/tmp` 有读写权限。
 
-2. 下载脚本 `install.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限
+2. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
    ```bash
    $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/script/data_import.sh \
@@ -183,24 +206,28 @@
    $ chmod a+x *.sh
    ```
    
-3. 安装MegaWise并导入示例数据
+3. 安装 MegaWise 并导入示例数据。
 
    ```bash
    $ ./install_megawise.sh [参数1，必选] [参数2，可选]
    ```
 
-   > 参数1：MegaWise安装目录的地址，请确保该目录不存在
-   >
-   > 参数2：MegaWise镜像id，可选，默认'0.4.0'
-   >
-   > 示例：./install_megawise.sh  /home/$USER/megawise '0.4.0'
+   > 参数1：MegaWise 安装目录的地址，请确保该目录不存在
+   
+   > 参数2：MegaWise 镜像id，可选，默认'0.4.0'
+   
+   > 示例：
+   
+   ```bash
+   ./install_megawise.sh  /home/$USER/megawise '0.4.0'
+   ```
+   
+   该语句所执行的操作如下：
 
-   该语句所执行的操作：
+   > 1. 拉取 MegaWise docker 镜像。
+   > 2. 下载配置文件和示例数据。
+   > 3. 启动 MegaWise。
+   > 4. 准备示例数据并导入 MegaWise。
+   > 5. 修改相关配置参数，重启 MegaWise 服务。
 
-   > 1. 拉取MegaWise docker镜像；
-   > 2. 下载配置文件和示例数据；
-   > 3. 启动MegaWise；
-   > 4. 准备示例数据并导入MegaWise；
-   > 5. 修改相关配置参数，重启MegaWise服务。
-
-若出现`Successfully installed MegaWise and imported test data`表示MegaWise成功安装并导入示例数据。
+若出现 `Successfully installed MegaWise and imported test data` 则表示 MegaWise 成功安装且示例数据已导入。
