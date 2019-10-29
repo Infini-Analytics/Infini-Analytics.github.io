@@ -216,18 +216,18 @@
    
    > 参数2：MegaWise 镜像id，可选，默认'0.4.0'
    
-   > 示例：
+   示例：
    
    ```bash
-   ./install_megawise.sh  /home/$USER/megawise '0.4.0'
+   $ ./install_megawise.sh  /home/$USER/megawise '0.4.0'
    ```
    
    该语句所执行的操作如下：
 
-   > 1. 拉取 MegaWise docker 镜像。
-   > 2. 下载配置文件和示例数据。
-   > 3. 启动 MegaWise。
-   > 4. 准备示例数据并导入 MegaWise。
-   > 5. 修改相关配置参数，重启 MegaWise 服务。
+     1. 拉取 MegaWise Docker 镜像。
+     2. 下载配置文件和示例数据。
+     3. 启动 MegaWise。
+     4. 准备示例数据并导入 MegaWise。
+     5. 修改相关配置参数，重启 MegaWise 服务。
 
 若出现 `Successfully installed MegaWise and imported test data` 则表示 MegaWise 成功安装且示例数据已导入。
