@@ -27,7 +27,7 @@
 ### 安装 NVIDIA 驱动
 
 
-1. 禁用 Nouveau 驱动
+1. 禁用 Nouveau 驱动。
 
    安装 NVIDIA 驱动之前必须先禁用 Nouveau 驱动。请通过以下命令检查是否已启用 Nouveau 驱动：
 
@@ -85,13 +85,13 @@
    $ sudo chmod a+x NVIDIA-Linux-x86_64-430.50.run
    $ sudo ./NVIDIA-Linux-x86_64-430.50.run
 
-6. 重启系统
+6. 重启系统。
 
    ```bash
    $ sudo reboot  
    ```
 
-7. 测试是否安装成功
+7. 测试是否安装成功。
 
    ```bash
    $ sudo nvidia-smi  
