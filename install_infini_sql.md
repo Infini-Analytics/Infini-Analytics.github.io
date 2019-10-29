@@ -3,8 +3,8 @@
 
 本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
 
-- **安装前提** &ndash;包括硬件要求和软件要求，以及如何安装和配置 MegaWise Docker 的软件运行环境。主要涵盖了 NVIDIA 驱动、Docker 和 NVIDIA container toolkit 的安装。
-- **安装 MegaWise Docker 并导入示例数据** &ndash;包括 MegaWise Docker 的安装以及 infini 示例数据的导入。
+- **安装前提** &ndash; 包括硬件要求和软件要求，以及如何安装和配置 MegaWise Docker 的软件运行环境。主要涵盖了 NVIDIA 驱动、Docker 和 NVIDIA container toolkit 的安装。
+- **安装 MegaWise Docker 并导入示例数据** &ndash; 包括 MegaWise Docker 的安装以及 infini 示例数据的导入。
 
 
 
