@@ -8,7 +8,7 @@
 - 无缝融合传统数据分析和现代数据科学
 - Seamless integration between traditional data analytics and modern data science
 
-  将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。支持原生 SQL 查询和可视化交互分析，兼容各种主流机器学习框架。
+  将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。支持原生 SQL 查询和可视化交互分析，兼容多种主流机器学习框架。
   
   Infini Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Supporting raw SQL queries and visualized, interactive analytics, Infini Analytics is compatible with multiple mainstream machine learning models.
 
@@ -22,8 +22,7 @@
 - 高效整合跨时空数据
 - Efficient unity between geospatial and temporal datasets
 
-  融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。
-精细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
+  融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。精细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
 
   Infini Analytics unites analytics between geospatial and temporal datasets to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both see through the big picture and focus on every tiny little details.
 
@@ -60,6 +59,7 @@
 - Infini Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，Infini Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。
 - Infini Analytics implements data visualization based on the massive-scale parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, Infini Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, Infini Analytics can return query results for billion-scale datasets in sub-seconds.
 
+## 物流行业
 ## Logistics
 
 ### 问题
