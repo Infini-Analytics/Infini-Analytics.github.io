@@ -55,7 +55,6 @@
 
 4. 解决方案
 
-
 - Infini Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，Infini Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。
 - Infini Analytics implements data visualization based on the massive-scale parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, Infini Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, Infini Analytics can return query results for billion-scale datasets in sub-seconds.
 
@@ -111,7 +110,7 @@ Infini Analytics can visually display billion-scale datasets, thus empowering an
 ### Result
 
  - 实时检测网络异常以进行现场服务和预防性维护。
- - Real-time network monitoring for onsite service and preventive maintenance.
+ - Real-time network monitoring for onsite service and preventive maintenance
  - 了解客户流失的历史模式以建立预测性机器学习模型。
  - Knowledge about the history pattern of customer loss to establish a predictive machine learning model
  - 通过信号强度的地理空间分析改善客户体验。
