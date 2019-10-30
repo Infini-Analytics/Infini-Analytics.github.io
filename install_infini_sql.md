@@ -4,8 +4,9 @@
 本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
 
 - [**安装前提**](#安装前提)
-- [**自动安装 MegaWise 并导入示例数据**](#自动安装-MegaWise-并导入示例数据)
-- [**手动安装 MegaWise**](#手动安装-MegaWise)
+- **安装 MegaWise**
+  - [**自动安装 MegaWise 并导入示例数据**](#自动安装-MegaWise-并导入示例数据)
+  - [**手动安装 MegaWise**](#手动安装-MegaWise)
 
 
 
@@ -16,7 +17,7 @@
 | 组件                     | 配置                    |
 |--------------------------|-------------------------|
 | GPU |  NVIDIA Pascal 或以上            |
-| CPU                 | 4核 1.8GHz Sandy Bridge 或以上 |
+| CPU                 |Intel 四核 1.8GHz Sandy Bridge 或以上 |
 | 内存         | 16 GB 或以上           |
 | 硬盘                  | 1 TB 或以上         |
 
