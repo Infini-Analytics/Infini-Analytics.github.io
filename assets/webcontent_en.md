@@ -64,9 +64,9 @@
 ### 问题
 ### Problem
 
-随着车辆运行数据和供应链管理数据的指数级增长，物流行业迫切希望在最短的时间里作出有效决策来减少燃油消耗，提高操作员安全系数，降低维护成本，优化车辆利用率。
+随着车辆运行数据和供应链管理数据的高速增长，物流行业迫切希望在最短的时间里作出有效决策来减少燃油消耗，提高操作员安全系数，降低维护成本，优化车辆利用率。
 
-As the data for vehicle operations and supply chain management grows exponentially, the logistics industry needs to make effective decisions as fast as possible to decrease fuel consumption, reduce maintenance cost, and increase vehicle utilization rate.
+As the data for vehicle operations and supply chain management grows fast, the logistics industry needs to make effective decisions as fast as possible to decrease fuel consumption, reduce maintenance cost, and increase vehicle utilization rate.
 
 ### 解决方案
 ### Solution
