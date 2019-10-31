@@ -90,7 +90,7 @@
    $ sudo apt-get remove nvidia-*
    ```
    
-5. 赋予安装文件执行权限并安装驱动软件。下面的示例假设安装文件下载在home目录下。
+5. 赋予安装文件执行权限并安装驱动软件。下面的示例假设安装文件下载在`/home`目录下。
 
    ```bash
    $ sudo chmod a+x NVIDIA-Linux-x86_64-430.50.run
