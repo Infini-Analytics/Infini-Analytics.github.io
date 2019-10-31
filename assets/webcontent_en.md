@@ -10,7 +10,7 @@
 
   将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。原生支持 SQL 查询和可视化交互分析，兼容多种主流机器学习框架。
   
-  ZILLIZ Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Natively supporting raw SQL queries and visualized, interactive analytics, ZILLIZ Analytics is compatible with multiple mainstream machine learning models.
+  ZILLIZ Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Natively supporting SQL queries and visualized, interactive analytics, ZILLIZ Analytics is compatible with multiple mainstream machine learning models.
 
 - 充分挖掘硬件算力
 - Thorough utilization of hardware resources
