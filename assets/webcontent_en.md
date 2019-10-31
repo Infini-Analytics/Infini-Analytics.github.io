@@ -1,7 +1,7 @@
 1. Infini Analytics 首页标题：
 
-- 面向海量时空数据集的可视化交互分析平台
-- Visualized, Interactive Analytics Platform for Massive Geospatial and Temporal Datasets
+- 面向海量时空数据的可视化交互分析平台
+- Visualized, Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data
 
 2. 产品主要特性及简单描述
 
@@ -15,12 +15,12 @@
 - 充分挖掘硬件算力
 - Thorough utilization of hardware resources
 
-  充分利用 CPU 或 GPU 硬件的并行计算能力。无需索引、预聚合或采样等预处理就能实现海量数据集的 SQL 查询和可视化交互分析。
+  充分利用 GPU 和 CPU 硬件的并行处理能力。无需索引、预聚合、降采样等预处理就能实现海量数据集的 SQL 查询和可视化交互分析。
   
-  Infini Analytics thoroughly utilizes the parallel computing power of CPU or GPU and performs SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, clustering, and sampling, etc.
+  Thoroughly utilizing the parallel processing power of GPUs/CPUs, Infini Analytics can perform SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, pre-aggregation, and downsampling, etc.
 
-- 高效整合跨时空数据
-- Efficient unity between geospatial and temporal datasets
+- 高效整合多源异构时空数据
+- Efficient unity between heterogeneous geospatial and temporal data from different sources
 
   融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。精细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
 
@@ -30,10 +30,12 @@
 
 - MegaWise
 
-  - 作为 Infini Analytics 平台的核心，MegaWise 充分利用 GPU 的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
-  - As the core component of Infini Analytics, MegaWise thoroughly utilizes the parallel processing power of GPUs and can return query results for billion-scale datasets in sub-seconds.
-  - 支持原生 SQL 语法和多级数据缓存。
-  - MegaWise supports raw SQL and multi-level data cache.
+  - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
+  - As a GPU-accelerated data analytics engine, MegaWise supports raw SQL and is fully compatible with PostgreSQL.
+  - 面向 Infini Analytics 提供丰富的 GIS 加速算法库。
+  - MegaWise provides various GIS libraries for Infini Analytics.
+  - 充分利用 GPU 和 CPU 硬件的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
+  - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in sub-seconds.
 
 - Picasso
 
