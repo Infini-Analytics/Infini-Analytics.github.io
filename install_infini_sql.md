@@ -1,7 +1,7 @@
 
 # 安装 MegaWise
 
-本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
+本文档主要介绍 MegaWise Docker 的安装和配置等操作。
 
 - [**安装前提**](#安装前提)
   - [**安装 NVIDIA 驱动**](#安装-NVIDIA-驱动)
