@@ -17,7 +17,7 @@
 | 组件                     | 配置                    |
 |--------------------------|-------------------------|
 | GPU |  NVIDIA Pascal 或以上            |
-| CPU                 |Intel 四核 1.8GHz Sandy Bridge 或以上 |
+| CPU                 |Intel 四核 1.8 GHz Sandy Bridge 或以上 |
 | 内存         | 16 GB 或以上           |
 | 硬盘                  | 1 TB 或以上         |
 
