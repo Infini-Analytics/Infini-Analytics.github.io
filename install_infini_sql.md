@@ -4,7 +4,10 @@
 本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
 
 - [**安装前提**](#安装前提)
-- **安装 MegaWise**
+  - [**安装 NVIDIA 驱动**](#安装-NVIDIA-驱动)
+  - [**安装 Docker**](#安装-Docker)
+  - [**安装 NVIDIA container toolkit**](#安装-NVIDIA-container-toolkit)
+- [**安装 MegaWise**](#安装-MegaWise)
   - [**自动安装 MegaWise 并导入示例数据**](#自动安装-MegaWise-并导入示例数据)
   - [**手动安装 MegaWise**](#手动安装-MegaWise)
 
@@ -17,7 +20,7 @@
 | 组件                     | 配置                    |
 |--------------------------|-------------------------|
 | GPU |  NVIDIA Pascal 或以上            |
-| CPU                 |Intel 四核 1.8 GHz Sandy Bridge 或以上 |
+| CPU                 |Intel CPU Sandy Bridge 四核 1.8 GHz 或以上|
 | 内存         | 16 GB 或以上           |
 | 硬盘                  | 1 TB 或以上         |
 
@@ -27,7 +30,7 @@
 | 组件                     | 版本                    |
 |--------------------------|-------------------------|
 | 操作系统                 | Ubuntu 16.04 或以上 |
-| NVIDIA 驱动          | 430 或以上           |
+| NVIDIA 驱动          | 410 或以上，推荐最新版本          |
 | Docker                   | 19.03 或以上         |
 | NVIDIA Container Toolkit |  1.0.5-1 或以上            |
 
@@ -71,9 +74,9 @@
    $ sudo apt-get install lsmod
    ```
 
-2. 从 [NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us) 下载驱动安装文件。
+2. 从 [NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us) 下载最新版本的驱动安装文件。
 
-   > <font color='red'>注意：MegaWise 当前仅支持430及以上版本的 NVIDIA 驱动。安装或更新 NVIDIA 驱动存在一定风险，有可能导致显示系统崩溃。在安装或更新 NVIDIA 驱动前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用430及以上版本的 NVIDIA 驱动。</font>
+   > <font color='red'>注意：安装或更新 NVIDIA 驱动存在一定风险，有可能导致显示系统崩溃。在安装或更新 NVIDIA 驱动前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用最新版本的 NVIDIA 驱动。</font>
 
 3. 安装NVIDIA驱动需要先关闭图形界面， 按 Ctrl+Alt+F1 进入命令行界面，并执行以下命令关闭图形界面。
 
@@ -159,7 +162,7 @@
 5. 重新执行以下命令验证 Docker 是否安装成功。如果能够打印 Docker 的版本信息，则说明已成功安装 Docker。
 
    ```bash
-   $ docker -v
+   $ sudo docker -v
    ```
 
 ### 安装 NVIDIA container toolkit
@@ -195,7 +198,7 @@
 5. 验证 NVIDIA container toolkit 是否安装成功。
 
    ```bash
-   $ docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+   $ sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
    ```
 
 
@@ -220,14 +223,14 @@
    $ ./install_megawise.sh [参数1，必选] [参数2，可选]
    ```
 
-   > 参数1：MegaWise 安装目录的地址，请确保该目录不存在
+   > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在
    
-   > 参数2：MegaWise 镜像id，可选，默认'0.4.0'
+   > 参数2：MegaWise 镜像id，可选，默认'0.4.2'
    
    示例：
    
    ```bash
-   $ ./install_megawise.sh  /home/$USER/megawise '0.4.0'
+   $ ./install_megawise.sh  /home/$USER/megawise '0.4.2'
    ```
    
    该语句所执行的操作如下：
@@ -247,7 +250,7 @@
 2. 执行以下命令获得最新版本的 MegaWise 的 docker 镜像。
 
     ```bash
-    $ docker pull zilliz/megawise:$LATEST_VERSION
+    $ sudo docker pull zilliz/megawise:$LATEST_VERSION
     ```
 
 3. 安装 PostgreSQL 客户端。
@@ -359,7 +362,7 @@
 7. 启动 MegaWise。
 
     ```bash
-    docker run --gpus all --shm-size 17179869184 \ 
+    sudo docker run --gpus all --shm-size 17179869184 \ 
                             -v $WORK_DIR/conf:/megawise/conf \ 
                             -v $WORK_DIR/data:/megawise/data \ 
                             -v $WORK_DIR/server_data:/megawise/server_data \ 
