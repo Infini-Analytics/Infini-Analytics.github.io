@@ -1,7 +1,7 @@
 1. Infini Analytics 首页标题：
 
 - 面向海量时空数据的可视化交互分析平台
-- Visualized, Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data
+- Visualized and Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data
 
 2. 产品主要特性及简单描述
 
