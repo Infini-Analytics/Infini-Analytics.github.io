@@ -1,7 +1,7 @@
 
 # 安装 MegaWise
 
-本文档主要介绍 MegaWise Docker 的安装和配置等操作，完成后即可连接 MegaWise 进行各类数据操作。文档中涉及的操作主要包含以下部分：
+本文档主要介绍 MegaWise Docker 的安装和配置等操作。
 
 - [**安装前提**](#安装前提)
   - [**安装 NVIDIA 驱动**](#安装-NVIDIA-驱动)
@@ -48,31 +48,31 @@
 
    该命令执行后，如果终端打印了相关信息则说明 Nouveau 驱动已经被启用。如果启用了 Nouveau 驱动，则需执行后续的步骤将其禁用，否则请跳过以下步骤，开始安装 NVIDIA 驱动。
 
-   在以下路径创建文件 `/etc/modprobe.d/blacklist-nouveau.conf` 并在文件中写入如下内容：
+   1. 在以下路径创建文件 `/etc/modprobe.d/blacklist-nouveau.conf` 并在文件中写入如下内容：
 
-   ```
-   blacklist nouveau
-   options nouveau modeset=0  
-   ```
+      ```
+      blacklist nouveau
+      options nouveau modeset=0  
+      ```
 
-   执行以下命令并重启系统：
+   2. 执行以下命令并重启系统：
 
-   ```bash
-   $ sudo update-initramfs -u
-   $ sudo reboot  
-   ```
+      ```bash
+      $ sudo update-initramfs -u
+      $ sudo reboot  
+      ```
 
-   确认禁用 Nouveau 驱动，执行该命令将不输出任何信息。
+   3. 确认禁用 Nouveau 驱动，执行该命令将不输出任何信息。
 
-   ```bash
-   $ lsmod | grep nouveau
-   ```
+      ```bash
+      $ lsmod | grep nouveau
+      ```
    
-   如果系统中未安装 lsmod 工具，则先安装 lsmod, 然后执行上述命令。
+      如果系统中未安装 lsmod 工具，则先安装 lsmod, 然后执行上述命令。
 
-   ```bash
-   $ sudo apt-get install lsmod
-   ```
+      ```bash
+      $ sudo apt-get install lsmod
+      ```
 
 2. 从 [NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us) 下载最新版本的驱动安装文件。
 
@@ -90,7 +90,7 @@
    $ sudo apt-get remove nvidia-*
    ```
    
-5. 赋予安装文件执行权限并安装驱动软件。下面的示例假设安装文件下载在home目录下。
+5. 赋予安装文件执行权限并安装驱动软件。下面的示例假设安装文件下载在`/home`目录下。
 
    ```bash
    $ sudo chmod a+x NVIDIA-Linux-x86_64-430.50.run
