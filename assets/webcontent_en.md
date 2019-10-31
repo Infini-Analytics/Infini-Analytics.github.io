@@ -24,10 +24,11 @@
 
   融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。精细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
 
-  Infini Analytics unites analytics between geospatial and temporal datasets to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both see through the big picture and focus on every tiny little details.
+  Infini Analytics unites analytics between geospatial and temporal data to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both view the big picture and focus on every detail.
 
 3. 各个组件的一句话描述
 
+- MegaWise 数据分析引擎
 - MegaWise
 
   - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
@@ -37,19 +38,19 @@
   - 充分利用 GPU 和 CPU 硬件的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
   - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in sub-seconds.
 
+- Picasso 图形渲染引擎
 - Picasso
 
-  - 作为服务器端渲染引擎，用于实现海量数据集的可视化，包括点图，散点图和多边形。
-  - As the rendering engine on the server side, Picasso visualizes massive datasets into various formats, including dot plot, scatter plot, and polygon.
-  - 具备全面的可视化交互功能。交互体验流畅高效。
-  - Picasso unites visualization with high interactivity, producing a smooth user experience that ensures user efficiency.
-  - 对于地理空间数据，能够实现多达数十亿个点、线或多边形的可视化。
+  - GPU 加速的服务器端渲染引擎，支持多种图表的高并发渲染。
+  - As a GPU-accelerated server-side rendering engine, Picasso can render multiple plot types with high concurrency.
+  - 对于地理空间数据，能够实现多达数十亿个点、线或多边形的实时可视化。
   - Picasso can visualize up to one billion dots, lines, or polygons for geospatial data.
 
+- Infini Analytics 可视化分析平台
 - Infini Analytics
 
   - 对于海量时空数据，可以在极短时间内完成从查询到渲染的全部流程。
-  - For massive geospatial and temporal datasets, Infini Analytics can complete all procedures from data query to rendering in a flash.
+  - For massive-scale geospatial and temporal data, Infini Analytics can complete all procedures from data query to graphic rendering in a flash.
   - 全面实现图表、表格和地图的可视化交互。任何交互操作都会实时反映到您的可视化界面中。
   - Infini Analytics interactively visualizes plots, tables, and maps. Any interactive operation can be displayed in your visualized interface in real time.
   - 自定义配置多种图表类型。您可以任意选择各种可视化风格。
@@ -99,7 +100,7 @@ Infini Analytics empowers the logistics industry with the ability to analyze the
 
 超大规模的互联网终端日志以及传感器数据在整个电信网络中实时流动。伴随着 5G 通信技术带来的更大规模的数据风暴，电信公司希望通过实时数据分析来快速发现并解决网络异常，从而有效提高服务可用性和网络可靠性。
 
-Massive-scale internet logs and sensor data keeps flowing in the telecommunications network in real time. As the advent of 5G dramatically increases the quantity of data, the telecommunications industry wishes to perform real-time data analytics to quickly discover and resolve network problems, thus effectively increasing the usability and reliability of the network.
+Massive-scale internet log files and sensor data keeps flowing in the telecommunications network in real time. As the advent of 5G dramatically increases the quantity of data, the telecommunications industry needs to perform real-time data analytics to quickly discover and resolve network problems, thus effectively increasing the usability and reliability of the network.
 
 ### 解决方案
 ### Solution

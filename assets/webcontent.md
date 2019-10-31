@@ -18,7 +18,7 @@
 
 3. 各个组件的一句话描述
 
-- MegaWise 计算引擎
+- MegaWise 数据分析引擎
 
   - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
   - 面向 Infini Analytics 提供丰富的 GIS 加速算法库。
