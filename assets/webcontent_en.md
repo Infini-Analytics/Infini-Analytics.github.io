@@ -1,4 +1,4 @@
-1. Infini Analytics 首页标题：
+1. ZILLIZ Analytics 首页标题：
 
 - 面向海量时空数据的可视化交互分析平台
 - Visualized and Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data
@@ -8,23 +8,23 @@
 - 无缝融合传统数据分析和现代数据科学
 - Seamless integration between traditional data analytics and modern data science
 
-  将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。支持原生 SQL 查询和可视化交互分析，兼容多种主流机器学习框架。
+  将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。原生支持 SQL 查询和可视化交互分析，兼容多种主流机器学习框架。
   
-  Infini Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Supporting raw SQL queries and visualized, interactive analytics, Infini Analytics is compatible with multiple mainstream machine learning models.
+  ZILLIZ Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Natively supporting raw SQL queries and visualized, interactive analytics, ZILLIZ Analytics is compatible with multiple mainstream machine learning models.
 
 - 充分挖掘硬件算力
 - Thorough utilization of hardware resources
 
   充分利用 GPU 和 CPU 硬件的并行处理能力。无需索引、预聚合、降采样等预处理就能实现海量数据集的 SQL 查询和可视化交互分析。
   
-  Thoroughly utilizing the parallel processing power of GPUs/CPUs, Infini Analytics can perform SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, pre-aggregation, and downsampling, etc.
+  Thoroughly utilizing the parallel processing power of GPUs/CPUs, ZILLIZ Analytics can perform SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, pre-aggregation, and downsampling, etc.
 
 - 高效整合多源异构时空数据
 - Efficient unity between heterogeneous geospatial and temporal data from different sources
 
-  融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。精细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
+  融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。
 
-  Infini Analytics unites analytics between geospatial and temporal data to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both view the big picture and focus on every detail.
+  ZILLIZ Analytics unites analytics between geospatial and temporal data to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both view the big picture and focus on every detail.
 
 3. 各个组件的一句话描述
 
@@ -33,8 +33,8 @@
 
   - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
   - As a GPU-accelerated data analytics engine, MegaWise supports raw SQL and is fully compatible with PostgreSQL.
-  - 面向 Infini Analytics 提供丰富的 GIS 加速算法库。
-  - MegaWise provides various GIS libraries for Infini Analytics.
+  - 面向 ZILLIZ Analytics 提供丰富的 GIS 加速算法库。
+  - MegaWise provides various GIS libraries for ZILLIZ Analytics.
   - 充分利用 GPU 和 CPU 硬件的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
   - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in sub-seconds.
 
@@ -46,20 +46,20 @@
   - 对于地理空间数据，能够实现多达数十亿个点、线或多边形的实时可视化。
   - Picasso can visualize up to one billion dots, lines, or polygons for geospatial data.
 
-- Infini Analytics 可视化分析平台
-- Infini Analytics
+- Infini 可视化交互分析界面
+- Infini
 
   - 对于海量时空数据，可以在极短时间内完成从查询到渲染的全部流程。
-  - For massive-scale geospatial and temporal data, Infini Analytics can complete all procedures from data query to graphic rendering in a flash.
+  - For massive-scale geospatial and temporal data, Infini can complete all procedures from data query to graphic rendering in a flash.
   - 全面实现图表、表格和地图的可视化交互。任何交互操作都会实时反映到您的可视化界面中。
-  - Infini Analytics interactively visualizes plots, tables, and maps. Any interactive operation can be displayed in your visualized interface in real time.
+  - Infini interactively visualizes plots, tables, and maps. Any interactive operation can be displayed in your visualized interface in real time.
   - 自定义配置多种图表类型。您可以任意选择各种可视化风格。
-  - Infini Analytics contains various customizable plots. Feel free to choose your favorite style.
+  - Infini contains various customizable plots. Feel free to choose your favorite style.
 
 4. 解决方案
 
-- Infini Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，Infini Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。
-- Infini Analytics implements data visualization based on the massive-scale parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, Infini Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, Infini Analytics can return query results for billion-scale datasets in sub-seconds.
+- ZILLIZ Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。
+- ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.
 
 ## 物流行业
 ## Logistics
@@ -74,9 +74,9 @@ As the data for vehicle operations and supply chain management grows fast, the l
 ### 解决方案
 ### Solution
 
-Infini Analytics 时空数据分析平台为物流行业提供了从生产线到最后一公里的全供应链分析能力，为数据分析师提供了对数十亿行车辆运行数据和供应链管理数据进行实时分析的新方法。
+ZILLIZ Analytics 时空数据分析平台为物流行业提供了从生产线到最后一公里的全供应链分析能力，为数据分析师提供了对数十亿行车辆运行数据和供应链管理数据进行实时分析的新方法。
 
-Infini Analytics empowers the logistics industry with the ability to analyze the whole supply chain, starting from the production line to the last kilometer in delivery. Data analysts can then analyze billion-scale datasets for vehicle operation and supply chain management in real time.
+ZILLIZ Analytics empowers the logistics industry with the ability to analyze the whole supply chain, starting from the production line to the last kilometer in delivery. Data analysts can then analyze billion-scale datasets for vehicle operation and supply chain management in real time.
 
 ### 效果
 ### Result
@@ -105,9 +105,9 @@ Massive-scale internet log files and sensor data keeps flowing in the telecommun
 ### 解决方案
 ### Solution
 
-Infini Analytics 时空数据平台可直观显示数十亿条数据记录，为电信行业分析师提供了网络运营优化、客户流失分析，以及不同数据集或地理位置之间的模式和相关性研究的新方法。
+ZILLIZ Analytics 时空数据平台可直观显示数十亿条数据记录，为电信行业分析师提供了网络运营优化、客户流失分析，以及不同数据集或地理位置之间的模式和相关性研究的新方法。
 
-Infini Analytics can visually display billion-scale datasets, thus empowering analysts in the telecommunications industry with new methods to perform network operations optimization, customer loss analysis, and research in modes and correlation among different datasets or geological locations.
+ZILLIZ Analytics can visually display billion-scale datasets, thus empowering analysts in the telecommunications industry with new methods to perform network operations optimization, customer loss analysis, and research in modes and correlation among different datasets or geological locations.
 
 ### 效果
 ### Result
