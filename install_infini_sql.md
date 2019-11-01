@@ -140,9 +140,9 @@
    stable"
    ```
    
-如果系统中未安装 curl 工具，则先安装 curl, 然后执行上述命令。
+   如果系统中未安装 curl 工具，则先安装 curl, 然后执行上述命令。
    
-```bash
+   ```bash
    $ sudo apt-get install curl
    ```
    
