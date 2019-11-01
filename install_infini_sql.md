@@ -8,8 +8,8 @@
   - [**安装 Docker**](#安装-Docker)
   - [**安装 NVIDIA container toolkit**](#安装-NVIDIA-container-toolkit)
 - [**安装 MegaWise**](#安装-MegaWise)
-  - [**自动安装 MegaWise 并导入示例数据**](#自动安装-MegaWise-并导入示例数据)
-  - [**手动安装 MegaWise**](#手动安装-MegaWise)
+  - [**自动安装**](#自动安装-MegaWise-并导入示例数据)
+  - [**手动安装**](#手动安装-MegaWise)
 
 
 
