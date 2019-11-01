@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* ZILLIZ Analytics
+* [ZILLIZ Analytics](/)
      * 白皮书
        1. [通用](white_paper.md)
        1. [物流行业](white_paper_logistics.md)
