@@ -36,7 +36,7 @@
   - 面向 ZILLIZ Analytics 提供丰富的 GIS 加速算法库。
   - MegaWise provides various GIS libraries for ZILLIZ Analytics.
   - 充分利用 GPU 和 CPU 硬件的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
-  - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in sub-seconds.
+  - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in subseconds.
 
 - Picasso 图形渲染引擎
 - Picasso
@@ -59,7 +59,7 @@
 4. 解决方案
 
 - ZILLIZ Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。
-- ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.
+- ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in subseconds.
 
 ## 物流行业
 ## Logistics
