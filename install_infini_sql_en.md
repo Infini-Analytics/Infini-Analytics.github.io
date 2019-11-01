@@ -139,9 +139,9 @@ This document introduces how to install and configure MegaWise Docker.
    stable"
    ```
    
-If curl is not installed, you need to install curl before running the previous command.
+   If curl is not installed, you need to install curl before running the previous command.
    
-```bash
+   ```bash
    $ sudo apt-get install curl
    ```
    
