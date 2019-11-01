@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* [Megawise](/)
+* MegaWise
    * [Install MegaWise](install_infini_sql_en.md)
 * [ZILLIZ Analytics](/)
      * 白皮书
