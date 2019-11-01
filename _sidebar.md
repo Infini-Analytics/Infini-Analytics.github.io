@@ -1,8 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-* MegaWise
-   * [White paper](megawise_whitepaper_en.md)
-   * [Install MegaWise](install_infini_sql_en.md)
 * [ZILLIZ Analytics](/)
      * 白皮书
        1. [通用](white_paper.md)
