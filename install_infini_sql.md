@@ -206,7 +206,12 @@
 
 ## 自动安装 MegaWise 并导入示例数据
 
-1. 请确保当前用户对目录 `/tmp` 有读写权限。
+1. 新建一个目录$WORK_DIR作为工作目录。
+    ```bash
+    $ cd $WORK_DIR
+    #创建数据目录
+    $ mkdir data
+    ```
 
 2. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
@@ -219,17 +224,19 @@
 3. 安装 MegaWise 并导入示例数据。
 
    ```bash
-   $ ./install_megawise.sh [参数1，必选] [参数2，可选]
+   $ ./install_megawise.sh [参数1，必选] [参数2，必选] [参数3，可选]
    ```
 
    > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在
+
+   > 参数2：数据目录
    
-   > 参数2：MegaWise 镜像id，可选，默认'0.4.2'
+   > 参数3：MegaWise 镜像id，可选，默认'0.4.2'
    
    示例：
    
    ```bash
-   $ ./install_megawise.sh  /home/$USER/megawise '0.4.2'
+   $ ./install_megawise.sh  /home/$USER/megawise $WORK_DIR/data '0.4.2'
    ```
    
    该语句所执行的操作如下：
@@ -273,6 +280,7 @@
     ```bash
     $ cd $WORK_DIR
     $ mkdir conf
+    $ mkdir logs
     ```
 
 5. 获取 MegaWise 配置文件。
@@ -287,7 +295,9 @@
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。
 
-   1. 打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件，找到如下片段：
+   1. 打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件。
+
+       1. 定位到如下片段：
 
       ```yaml
       cache:  # size in GB
@@ -306,6 +316,19 @@
       `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
    
       `gpu` 部分，`gpu_num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
+
+        2. 定位到如下片段：
+
+            ```yaml
+            log:
+                path: /tmp
+                level: 0
+                rotating: yes
+                rotating_size_limit: 64
+                rotating_number_limit: 10                          
+            ```
+        `log` 部分，`path`表示chewie进程的日志路径，默认/tmp,请改成`$WORK_DIR/logs`，或者其他能保证当前用户拥有写权限的路径。
+        
    
     2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
    
@@ -365,7 +388,7 @@
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
                             -v $WORK_DIR/server_data:/megawise/server_data \
-                            -v /tmp:/tmp \
+                            -v $WORK_DIR/logs:/megawise/logs \
                             -v /home/$USER/.nv:/home/megawise/.nv \
                             -p 5433:5432 \
                             $IMAGE_ID
