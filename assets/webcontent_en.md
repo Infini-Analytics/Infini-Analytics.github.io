@@ -32,7 +32,7 @@
 - MegaWise
 
   - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
-  - As a GPU-accelerated data analytics engine, MegaWise supports raw SQL and is fully compatible with PostgreSQL.
+  - As a GPU-accelerated data analytics engine, MegaWise natively supports SQL and is fully compatible with PostgreSQL.
   - 面向 ZILLIZ Analytics 提供丰富的 GIS 加速算法库。
   - MegaWise provides various GIS libraries for ZILLIZ Analytics.
   - 充分利用 GPU 和 CPU 硬件的并行处理能力，对十亿级数据集的查询分析提供亚秒级响应。
