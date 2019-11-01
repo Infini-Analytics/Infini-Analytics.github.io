@@ -29,7 +29,7 @@
 3. 各个组件的一句话描述
 
 - MegaWise 数据分析引擎
-- MegaWise
+- MegaWise - Data Analytics Engine
 
   - GPU 加速的数据分析引擎，原生支持 SQL 语法，全面兼容 PostgreSQL 接口。
   - As a GPU-accelerated data analytics engine, MegaWise natively supports SQL and is fully compatible with PostgreSQL.
@@ -39,7 +39,7 @@
   - Thoroughly utilizing the parallel processing power of GPUs/CPUs, MegaWise can return query results for billion-scale datasets in subseconds.
 
 - Picasso 图形渲染引擎
-- Picasso
+- Picasso - Graphics Rendering Engine
 
   - GPU 加速的服务器端渲染引擎，支持多种图表的高并发渲染。
   - As a GPU-accelerated server-side rendering engine, Picasso can render multiple plot types with high concurrency.
@@ -47,7 +47,7 @@
   - Picasso can visualize up to one billion dots, lines, or polygons for geospatial data.
 
 - Infini 可视化交互分析界面
-- Infini
+- Infini - Visualized, Interactive Analytics Interface
 
   - 对于海量时空数据，可以在极短时间内完成从查询到渲染的全部流程。
   - For massive-scale geospatial and temporal data, Infini can complete all procedures from data query to graphic rendering in a flash.
