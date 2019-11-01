@@ -1,4 +1,4 @@
-# Infini Analytics Quickstart
+# ZILLIZ Analytics 快速入门
 
 #### 登录
 ![登录](./assets/Login.png)

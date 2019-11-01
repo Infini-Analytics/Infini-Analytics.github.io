@@ -1,4 +1,4 @@
-# 安装 Infini 可视化组件
+# 安装 Infini 可视化交互分析界面
 
 ## 安装前提
 
@@ -105,7 +105,7 @@
 
 
 
-## 关闭 Infini 可视化组件
+## 关闭 Infini 可视化交互分析界面
 
 ```bash
 # Stop Infini
