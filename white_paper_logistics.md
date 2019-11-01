@@ -31,7 +31,7 @@ ZILLIZ Analytics 具有完整的自主知识产权，并且率先使用图形处
 
 
 
-## MegaWise 核心数据计算引擎
+## MegaWise 核心数据分析引擎
 
 ### 对 SQL 的原生支持
 
