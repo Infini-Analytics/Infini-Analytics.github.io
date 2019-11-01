@@ -234,7 +234,7 @@ If the terminal returns version information about the GPU, you can assume that t
      1. Pull MegaWise Docker image.
      2. Download config files and sample data.
      3. Launch MegaWise.
-     4. Import sample data to MegaWise。
+     4. Import sample data to MegaWise.
      5. Modify parameters to restart MegaWise.
 
 If the terminal displays `Successfully installed MegaWise and imported test data`, you can assume that MegaWise is successfully installed and sample data is imported.
@@ -295,18 +295,18 @@ If the terminal displays `Successfully installed MegaWise and imported test data
         gpu:
             gpu_num: 2
             physical_memory: 2
-            partition_memory: 2 
+            partition_memory: 2
       ```
 
       Configure the parameters based on the hardware environment of the server (The numbers are in GBs).
 
-      `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
+      For the `cpu` part, `physical_memory` and `partition_memory` respectively represents the available memory size for MegaWise and the memory size for the data cache partition. It is recommended that you set both `partition_memory` and `physical_memory` to more than 70 percent of the server memory.
     
-      `gpu` 部分，`gpu_num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
+      For the `gpu` part, `gpu_num` represents the number of GPUs used by MegaWise. `physical_memory` and `partition_memory` respectively represents the available video memory size for MegaWise and the video memory size for the data cache partition. It is recommended that you reserve 2 GB of video memory to store the intermediate results during computation by setting `partition_memory` and `physical_memory` to a value that equals the video memory of a single GPU minus 2.
    
-    2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
+    2. Open `megawise_config_template.yaml` in the `conf` directory.
     
-        1. 定位到如下片段并设置相关参数。
+        1. Navigate to the following code and set parameter values:
 
             ```yaml
               worker_config:
@@ -326,15 +326,15 @@ If the terminal displays `Successfully installed MegaWise and imported test data
                 cuda_profile_query_cnt: -1 #-1 means don't profile, positive integer means the number of queries to profile, other value invalid
             ```  
 
-            依据下表设置以下参数的值：
+            Set the values of some parameters per the following table:
 
-            | 参数                     | 值                   |
+            | Parameter                    | Value                   |
             |--------------------------|-------------------------|
-            | `worker_num` |  `chewie_main.yaml` 中的 `gpu_num` 值            |
-            | `physical_memory` |  `chewie_main.yaml` 中的 `physical_memory` 值            |
-            | `partition_memory` |  `chewie_main.yaml` 中的 `partition_memory` 值           |
+            | `worker_num` | The value of `gpu_num` in `chewie_main.yaml`           |
+            | `physical_memory` |   The value of `physical_memory` in `chewie_main.yaml`          |
+            | `partition_memory` |   The value of `partition_memory` in `chewie_main.yaml`        |
 
-        2. 定位到如下片段并设置相关参数。
+        2. Navigate to the following code and set parameter values:
 
             ```yaml
               string_config:
@@ -350,9 +350,9 @@ If the terminal displays `Successfully installed MegaWise and imported test data
                   file_size: 104857600     # 100M
             ```
 
-            `dict_config`中的`cache_size`表示用于字符串字典编码的内存总量，单位为字节。
+            `cache_size` in `dict_config` represents the memory size for encoding string dictionaries in bytes. 
 
-            `hash_config`中的`cache_size`表示用于字符串哈希编码的内存总量，单位为字节。
+            `cache_size` in `hash_config` represents the memory size for encoding string hashes in bytes.
 
 
 7. Run MegaWise.
@@ -372,19 +372,19 @@ If the terminal displays `Successfully installed MegaWise and imported test data
 
     > `--shm-size`
 
-      The allocated memory size for a running Docker image，改值取 `chewie_main.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
+      The allocated memory size for a running Docker image in bytes. Use the value in the `physical_memory` parameter under `cpu`->`cache` in `chewie_main.yaml`.
 
     > `-v`
 
-      宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
+      Directory mapping between the host and the Docker image. Separated by `:`, the former part is the directory of the host and the latter part is the directory of the Docker image.
 
-      在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
+      When launching the container, you can use `-v` to map local data files to the container to import local files to the MegaWise database.
 
     > `-p`
 
-      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本教程设置为5433。
+      Port mapping between the host and the Docker image. Separated by `:`, the former part is the port of the host and the latter part is the port of the Docker image. You can set the host to use any unoccupied port. In this tutorial, we use 5433.
 
-    容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
+    Logging starts when the container starts running. If you can find the following content in the log, you can assume the MegaWise server is successfully running.
 
     ```bash
     MegaWise server is running...
