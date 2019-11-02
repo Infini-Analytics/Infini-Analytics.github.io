@@ -371,6 +371,19 @@
 
             `hash_config`中的`cache_size`表示用于字符串哈希编码的内存总量，单位为字节。
 
+        3. 定位到如下片段并设置相关参数。
+
+            ```yaml
+              log_config:
+                path: @log_path@
+                level: 2                    # optional: trace = 0, debug = 1, info = 2, warn = 3, error = 4, critical = 5, off = 6
+                rotating: yes               # yes means rotated log, no means non-rotated log;
+                rotating_size_limit: 64     # 64 MB, valid when rotating is yes
+                rotating_number_limit: 10   # valid when rotating is yes
+            ```
+
+            `log_config` 部分，`path`表示megawise server进程的日志路径，默认/tmp,请改成`$WORK_DIR/logs`，或者其他能保证当前用户拥有写权限的路径。
+
 
 7. 启动 MegaWise。
 
@@ -378,6 +391,7 @@
     sudo docker run --gpus all --shm-size 17179869184 \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
+                            -v $WORK_DIR/logs:/megawise/logs \
                             -v $WORK_DIR/server_data:/megawise/server_data \
                             -v $WORK_DIR/logs:/megawise/logs \
                             -v /home/$USER/.nv:/home/megawise/.nv \
