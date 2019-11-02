@@ -206,14 +206,7 @@
 
 ## 自动安装 MegaWise 并导入示例数据
 
-1. 新建一个目录$WORK_DIR作为工作目录。
-    ```bash
-    $ cd $WORK_DIR
-    #创建数据目录
-    $ mkdir data
-    ```
-
-2. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
+1. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
    ```bash
    $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/script/data_import.sh \
@@ -221,22 +214,20 @@
    $ chmod a+x *.sh
    ```
    
-3. 安装 MegaWise 并导入示例数据。
+2. 安装 MegaWise 并导入示例数据。
 
    ```bash
-   $ ./install_megawise.sh [参数1，必选] [参数2，必选] [参数3，可选]
+   $ ./install_megawise.sh [参数1，必选] [参数2，可选]
    ```
 
-   > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在
-
-   > 参数2：数据目录
+   > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在，并且当前用户对该目录有读写权限。
    
-   > 参数3：MegaWise 镜像id，可选，默认'0.4.2'
+   > 参数2：MegaWise 镜像id，可选，默认'0.4.2'
    
    示例：
    
    ```bash
-   $ ./install_megawise.sh  /home/$USER/megawise $WORK_DIR/data '0.4.2'
+   $ ./install_megawise.sh  /home/$USER/megawise '0.4.2'
    ```
    
    该语句所执行的操作如下：
