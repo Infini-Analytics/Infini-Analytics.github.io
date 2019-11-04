@@ -279,9 +279,9 @@
     ```bash
     $ cd $WORK_DIR/conf
     $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/chewie_main.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
     ```
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。
