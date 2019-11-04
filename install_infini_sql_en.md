@@ -278,9 +278,9 @@ If the terminal displays `Successfully installed MegaWise and imported test data
     ```bash
     $ cd $WORK_DIR/conf
     $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/chewie_main.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
     ```
 
 6. Modify config files based on the hardware environment of MegaWise.
