@@ -382,7 +382,7 @@
                 rotating_number_limit: 10   # valid when rotating is yes
             ```
 
-            `log_config` 部分，`path` 表示megawise server进程的日志路径，默认 `/tmp`,请改成 `$WORK_DIR/logs` ，或者其他能保证当前用户拥有写权限的路径。
+            `log_config` 部分，`path` 表示 MegaWise server 进程的日志路径，默认 `/tmp`,请改成 `$WORK_DIR/logs` ，或者其他能保证当前用户拥有写权限的路径。
 
 
 7. 启动 MegaWise。
