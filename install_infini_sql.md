@@ -140,9 +140,9 @@
    stable"
    ```
    
-如果系统中未安装 curl 工具，则先安装 curl, 然后执行上述命令。
+   如果系统中未安装 curl 工具，则先安装 curl, 然后执行上述命令。
    
-```bash
+   ```bash
    $ sudo apt-get install curl
    ```
    
@@ -279,9 +279,9 @@
     ```bash
     $ cd $WORK_DIR/conf
     $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/chewie_main.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
-    wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
+    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
     ```
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。
@@ -307,6 +307,7 @@
       `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
    
       `gpu` 部分，`gpu_num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
+      
    
     2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
    
@@ -354,9 +355,9 @@
                   file_size: 104857600     # 100M
             ```
 
-            `dict_config`中的`cache_size`表示用于字符串字典编码的内存总量，单位为字节。
+            `dict_config` 中的 `cache_size` 表示用于字符串字典编码的内存总量，单位为字节。
 
-            `hash_config`中的`cache_size`表示用于字符串哈希编码的内存总量，单位为字节。
+            `hash_config` 中的 `cache_size` 表示用于字符串哈希编码的内存总量，单位为字节。
 
 
 7. 启动 MegaWise。
