@@ -318,7 +318,7 @@
                 rotating_size_limit: 64
                 rotating_number_limit: 10                          
             ```
-        `log` 部分，`path`表示chewie进程的日志路径，默认/tmp,请改成`$WORK_DIR/logs`，或者其他能保证当前用户拥有写权限的路径。
+        `log` 部分，`path` 表示chewie进程的日志路径，默认 `/tmp` ,请改成 `$WORK_DIR/logs` ，或者其他能保证当前用户拥有写权限的路径。
         
    
     2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
@@ -367,9 +367,9 @@
                   file_size: 104857600     # 100M
             ```
 
-            `dict_config`中的`cache_size`表示用于字符串字典编码的内存总量，单位为字节。
+            `dict_config` 中的 `cache_size` 表示用于字符串字典编码的内存总量，单位为字节。
 
-            `hash_config`中的`cache_size`表示用于字符串哈希编码的内存总量，单位为字节。
+            `hash_config` 中的 `cache_size` 表示用于字符串哈希编码的内存总量，单位为字节。
 
         3. 定位到如下片段并设置相关参数。
 
@@ -382,7 +382,7 @@
                 rotating_number_limit: 10   # valid when rotating is yes
             ```
 
-            `log_config` 部分，`path`表示megawise server进程的日志路径，默认/tmp,请改成`$WORK_DIR/logs`，或者其他能保证当前用户拥有写权限的路径。
+            `log_config` 部分，`path` 表示megawise server进程的日志路径，默认 `/tmp`,请改成 `$WORK_DIR/logs` ，或者其他能保证当前用户拥有写权限的路径。
 
 
 7. 启动 MegaWise。
